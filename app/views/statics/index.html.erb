@@ -45,11 +45,7 @@
             </div>
         </div>
 
-        <% if user_signed_in? %>
-                  <%= link_to '<i style="font-size:25px;color:#FFFFFF !important;" class="fa fa-sign-out fa-3"></i>'.html_safe, destroy_user_session_path, method: :delete %>
-                  <% else %>
-                 <%= link_to "Login",  new_user_session_path, style:"float:left; color:white" %>
-      <% end %>
+        
         </form>
     </div>
 
@@ -101,20 +97,7 @@
           </ul>
         </li> <!-- end dropdown -->
 
-
- <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">TICKETS & SHOWTIMES<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class="dropdown-header">TV</li>
-            <b class="caret"></b>
-            <li><a href="/one">One</a></li>
-            <li><a href="/two">Two</a></li>
-            <li><a href="/three">Three</a></li>
-            <li class="divider"></li>
-            <li><a href="/admin">Admin Dashboard</a></li>
-            <li><a href="/admin/users">Users</a></li>
-          </ul>
-        </li> <!-- end dropdown -->
+ 
 
       </ul>
       <ul class="nav navbar-nav navbar-right" align="right">
@@ -122,7 +105,13 @@
       <li><%=link_to "Login", new_user_session_path, style:"float:left; color:white" %> </li>
       <li><%=link_to "Sign up", new_user_registration_path, style:"float:left; color:white" %> </li>
 
-      
+       <% if user_signed_in? %>
+                 <li> <%= link_to '<i style="font-size:18px;color:#FFFFFF !important;" class="fa fa-sign-out fa-3"></i>Sign Out'.html_safe, destroy_user_session_path, method: :delete %></li>
+                 </br>
+                 <span style="font-weight:bold;"> <%= current_user.email %> </span>
+                 
+                 
+      <% end %>
 
       </ul>
     </div>
