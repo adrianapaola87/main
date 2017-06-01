@@ -1,6 +1,7 @@
 class StaticsController < ApplicationController
-  def index
-  end
+  def index 
+  	@peliculas = Pelicula.all 
+   end
 
   def about
   end

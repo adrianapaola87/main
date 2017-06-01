@@ -133,6 +133,28 @@
 </nav> <!-- end nav -->
 
 
+<br>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">TREDING ON RT</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Wonder Woman Rewies</a></li>
+      <li><a href="#">DC super heroes movies</a></li>
+      <li><a href="#">Cannes tomatometers</a></li>
+      <li><a href="#">Summer scorecard</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+
 
 
 
@@ -169,6 +191,7 @@
             </td>
             <td align="center">
               <%= link_to '', pelicula_path(peli), :title => "Visualizar", :class => 'btn btn-sm btn-success fa fa-search', style:"color: white;" %>
+              
               <%= link_to '', edit_pelicula_path(peli), :title => "Editar", :class => 'btn btn-sm btn-primary fa fa-edit', style:"color: white;" %>
               <%= link_to '', { action: :destroy, id: peli.id }, method: :delete, :title => "Eliminar",:class => 'btn btn-sm btn-danger fa fa-close', style:"color: white;" %>
             </td>

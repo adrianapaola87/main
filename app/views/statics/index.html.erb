@@ -5,6 +5,7 @@
     background-color: green;
     background-repeat: no-repeat;
       width: 100%; height: 100px;
+      position: fixed;
       
 }
 #brand-logo {
@@ -12,15 +13,16 @@
   background-repeat: no-repeat;
       width: 400px; height: 100px;
 
+
 }
 .login { color:white !important; width:450px; float:right;}
 .nav > li > a, .navbar-text { color:white !important; font-weight: bold;  }
-.nav > li > a:visited { background-color: green !important;    }
+.nav > li > a:visited { background-color: green !important;   
 
 </style>
   
 
-
+ 
 
   <nav id="logo" class="navbar navbar-fixed-top navbar-default" role="navigation">
    
@@ -119,15 +121,267 @@
 </nav>
 
 
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+
+<br>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">TREDING ON RT</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Wonder Woman Rewies</a></li>
+      <li><a href="#">DC super heroes movies</a></li>
+      <li><a href="#">Cannes tomatometers</a></li>
+      <li><a href="#">Summer scorecard</a></li>
+    </ul>
+  </div>
+</nav>
 
 
+<div class="row">
 
-
+<div class="col-md-3 col-lg-3 col-xs-12"> 
+<div class="vertical-menu"><div class="menu v">
+  <a href="#" class="active">PRINCIPAL</a>
+  <a href="#"> <img src="nube.jpg" width="34" height="34" />
+  Nuevas pelis</a>
+   <a href="#"><img src="fuegos.jpg" width="34" height="34" />
+  Popular</a>
+    <a href="#"><img src= "estrella.jpg" width="34" height="34" />Mas visto</a>
+     <a href="#"><img src="corazon.png" width="34" height="34" />Mas votados</a>
+  </div>
  
+            
+      
+
+</div>   
+
+</div> <!-- end row -->
 
 
 
 
+<div class="container">
+
+<div class="row">
+ <div class="col-lg-2 col-md-2 col-xs-12">
+ 
+ <div class="vertical-menu">
+  <a href="#" class="active">PELICULAS DE ESTRENO</a>
+  <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpJuMIOHxhz4h07XBYwsLUhUAFQFdXgTdUdTcFhjA0yrFg2YCeB7NkvxpFmk5VeR7kOCfc" style="width: 190px; height: 200px;"><br>Piratas del caribe&nbsp;55% </a>
+ </div>
+ </div>
+
+  &nbsp;&nbsp;<div class="col-lg-2 col-md-2 col-xs-12">
+  <div class="vertical-menu">
+  <a href="#" class="active">PELICULAS DE ESTRENO</a>
+  <a href="#"><img src="http://cs319427.vk.me/v319427654/9303/FyICJiQ7wDU.jpg" style="width: 190px; height: 200px; "/><br>Barbie y sus Amigas&nbsp;&nbsp;55%</a>
+  </div>
+</div>
+  <div class="col-lg-2 col-md-2 col-xs-12">
+ <div class="vertical-menu">
+<a href="#" class="active">PELICULAS DE ESTRENO</a>
+
+  <a href="#"><img src="https://s-media-cache-ak0.pinimg.com/736x/f0/ba/84/f0ba8451311a28cb3fa3c1c16872bf86.jpg" style="width: 190px; height: 200px; "/><br>Batmans&nbsp;&nbsp;75% </a>
+  </div>
+</div>
+  <div class="col-lg-2 col-md-2 col-xs-12">
+  <div class="vertical-menu">
+  <a href="#" class="active">PELICULAS DE ESTRENO</a>
+<a href="#"><img src="https://i.ytimg.com/vi/fk99vuX6C7w/hqdefault.jpg" style="width: 190px; height: 200px; "/><br>La zona prohibida&nbsp;&nbsp;15%</a>
+ 
+  </div>
+
+ </div>
+  
 
 
   
+
+ </div> <!-- end row -->
+ </div>
+
+
+ <div class="container">
+
+<h3> PELICULAS MAS VISTAS</h3>
+
+<div class="row">
+
+<div class="col-md-9 col-lg-9  col-xs-12" > 
+
+            <table class="table table-hover table-striped" border="0" >
+              
+              <tbody>
+               <% @peliculas.each do |peli| %>
+                  <tr>
+                    <td>
+                      <i class="fa fa-star" aria-hidden="true"></i>&nbsp;</span><%= peli.stars %>
+                    </td>
+                    <td><%= peli.id  %> </td> 
+                    <td> 
+                     <%= link_to peli.name, pelicula_path(peli), :title => "Visualizar"  %> 
+                    </td>
+                    
+                     <td>
+                      <%= peli.main_actor %>
+                    </td>
+                    <td>
+                      <%= peli.year %>
+                    </td>
+                    
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+           <%= link_to 'Visualizar todas', peliculas_path, :title => "Visualizar", :class => 'btn btn-xs btn-success pull-right', style:"color: white;" %>
+
+           </div>
+      
+
+</div> <!-- row -->
+
+<div class="row">
+
+ <div class="col-lg-12 col-sm-6 col-xs-6">
+ <h3><b>NOTICIA DESTACADA</b></h3>
+         </iframe> <p><a href="html_images.asp"><iframe width="860" height="390" src="https://2.bp.blogspot.com/-xJokVVozWyY/TlUZmWaZ5kI/AAAAAAAAFhQ/_rl7f0sHFyA/s1600/HP%2BSharing%2BSS%2BUpdated.png" frameborder/
+              LGq0udz4lP8?ecver=1" frameborder="0" allowfullscreen></iframe> 
+                 </div> <!-- end col -->
+
+
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-4">
+
+
+    
+      <h3><b>TOP HEADLINES</b></h3>
+      <p>.Tyler perry planing Another madoe walloween </p>
+      <p>-Variety</p>
+      <br>
+      <p>Boss baby 2l Comming in 2021</p>
+      <p>-Variety</p>
+    </div>
+    <div class="col-sm-4">
+      <h3><b>New streaming</b></h3>
+      <p>The major streaming services added bunch of great stuff this week, including this year’s Best Picture winner, an acclaimed new TV series from the CW, Quentin Tarantino’s Oscar-winning WWII thriller, and everything ranging from a fact-based psychodra.</p>
+     
+    </div>
+    <div class="col-sm-4">
+      <h3><b>20 KID TV ACTORS FROM THE EARLY 2000S WHO ARE CRUSHING IT TODAY</b></h4>        
+      <p>Time isn’t always kind to the adorable children who star in your favorite movies and TV shows, but for these kid actors who rose to fame in the early half of the 2000s, things have turned out just fine.</p>
+      
+    </div>
+  </div>
+</div>
+
+
+<hr>
+
+<div class="container">
+ <div class="footer">
+               
+                    <div class="text">
+                             
+                                Help</br>
+                              <p><a href="http://localhost:3000/about#"> About Rotten Tomatoes</a></p>
+                                Wat's the Tomatometer?<br/>
+                                feedback<br/>
+                  </div> 
+
+
+                <div class="text1">
+                             
+                          <img src="images.png" width="34" height="34" />      JOIN THE NEWSLETTER</br>
+               Get the freshest reviews, news, and more delivered  <br/><br/>
+                             <input type="button" class="button" value="Join the newsletter!!"><br/>
+                                
+                                  </div> 
+
+
+                
+
+
+               <div class="textwidget">
+                <h3 div class="f">follow us</h3>
+
+                <a href="https://twitter.com" target="_blank">
+                   <img src="twitter(1).png" width="34" height="34" />
+  
+                       </i>
+                         </a>&nbsp;&nbsp;
+                             
+              <a href="https://www.facebook.com" target="_blank"><img src="face.png" width="34" height="34" />
+  
+                     </i>
+
+                         </a> &nbsp;&nbsp;
+             
+              
+            <a href="https://plus.google.com" target="_blank"> <img src="google.jpg" width="34" height="34" />
+  
+
+             </i>
+                </a>
+
+                 &nbsp;&nbsp;
+
+<a href="https://www.snapchat.com" target="_blank"><img src="sn.png" width="34" height="34" />
+  
+
+</i>
+</a>
+
+&nbsp;&nbsp;
+
+<a href="https://www.youtube.com" target="_blank"><img src="youtube-redondo.png" width=34" height="34"/>
+  
+
+</i>
+
+
+
+
+</div>
+   </div>
+  
+
+</div> <!-- end container -->
+
+                
+   

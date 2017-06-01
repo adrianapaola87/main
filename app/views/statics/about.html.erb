@@ -1,2 +1,566 @@
-<h1>Statics#about</h1>
-<p>Find me in app/views/statics/about.html.erb</p>
+<style>
+#logo {
+  
+   background-image: url("https://staticv2-4.rottentomatoes.com/static/images/logos/tomatocorner.png");
+    background-color: green;
+    background-repeat: no-repeat;
+      width: 100%; height: 100px;
+      position: fixed;
+      
+}
+#brand-logo {
+ background-image: url("https://staticv2-4.rottentomatoes.com/static/images/logos/rtlogo.png");
+  background-repeat: no-repeat;
+      width: 400px; height: 100px;
+
+
+}
+.login { color:white !important; width:450px; float:right;}
+.nav > li > a, .navbar-text { color:white !important; font-weight: bold;  }
+.nav > li > a:visited { background-color: green !important;   
+
+</style>
+  
+
+ 
+
+  <nav id="logo" class="navbar navbar-fixed-top navbar-default" role="navigation">
+   
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsable">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- BRAND -->
+      <a href="/home" id="brand-logo" class="navbar-brand"></a>
+    </div>
+      <!-- SEARCH BOX -->
+    <div class="col-sm-5 col-md-5">
+        <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" size="50" placeholder="Search" name="q">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+
+        
+        </form>
+    </div>
+
+    <!-- NAVBAR -->
+    <div class="collapse navbar-collapse" id="navbar-collapsable">
+      <ul class="nav navbar-nav foo" id="menu">
+        
+       <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">MOVIES & DVDs<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">MOVIES & DVDs</li>
+            <b class="caret"></b>
+            <li>  <%= link_to 'Peliculas', peliculas_path %> </li>
+            <li><a href="/two">Two</a></li>
+            <li><a href="/three">Three</a></li>
+            <li class="divider"></li>
+            <li><a href="/admin">Admin Dashboard</a></li>
+            <li><a href="/admin/users">Users</a></li>
+          </ul>
+        </li> <!-- end dropdown -->
+
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">TV<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">TV</li>
+            <b class="caret"></b>
+            <li><a href="/one">One</a></li>
+            <li><a href="/two">Two</a></li>
+            <li><a href="/three">Three</a></li>
+            <li class="divider"></li>
+            <li><a href="/admin">Admin Dashboard</a></li>
+            <li><a href="/admin/users">Users</a></li>
+          </ul>
+        </li> <!-- end dropdown -->
+
+
+ <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">NEWS<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">TV</li>
+            <b class="caret"></b>
+            <li><a href="/one">One</a></li>
+            <li><a href="/two">Two</a></li>
+            <li><a href="/three">Three</a></li>
+            <li class="divider"></li>
+            <li><a href="/admin">Admin Dashboard</a></li>
+            <li><a href="/admin/users">Users</a></li>
+          </ul>
+        </li> <!-- end dropdown -->
+
+ 
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right" align="right">
+       <li><%= link_to "Nosotros", about_path, style:"float:left; color:white" %></li> 
+      <li><%=link_to "Login", new_user_session_path, style:"float:left; color:white" %> </li>
+      <li><%=link_to "Sign up", new_user_registration_path, style:"float:left; color:white" %> </li>
+
+       <% if user_signed_in? %>
+                 <li> <%= link_to '<i style="font-size:18px;color:#FFFFFF !important;" class="fa fa-sign-out fa-3"></i>Sign Out'.html_safe, destroy_user_session_path, method: :delete %></li>
+                 </br>
+                 <span style="font-weight:bold;"> <%= current_user.email %> </span>
+                 
+                 
+      <% end %>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+
+<br>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">TREDING ON RT</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Wonder Woman Rewies</a></li>
+      <li><a href="#">DC super heroes movies</a></li>
+      <li><a href="#">Cannes tomatometers</a></li>
+      <li><a href="#">Summer scorecard</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid">
+
+<div class="row">
+
+
+<div class=" col-lg-9 col-md-6 col-xs-12 ">
+
+<h1> ABOUT ROTTEN TOMATOES® </h1>
+
+<p>
+  Rotten Tomatoes® and the Tomatometer® rating is the most trusted measurement of quality entertainment. As the leading online aggregator of movie and TV show reviews from professional critics, Rotten Tomatoes offers the most comprehensive guide to what's fresh. The world famous Tomatometer rating represents the percentage of positive professional reviews for films and TV shows and is used by millions every day, to help with their entertainment viewing decisions. Rotten Tomatoes designates the best reviewed movies and TV shows as Certified Fresh™. That accolade is awarded with Tomatometer ratings of 75% and higher, and a required minimum number of reviews. Weekly Rotten Tomatoes podcasts can be found on RottenTomatoes.com, iTunes, Soundcloud and Stitcher, and Rotten Tomatoes' entertainment experts make regular TV and radio appearances across the US.
+
+In 2016, Flixster and Rotten Tomatoes became part of Fandango's portfolio of digital properties, serving moviegoers and entertainment fans
+This website applies this idea when collecting the opinions of the shows by means of a count of positive and negative votes. Shows that get a percentage of positive votes less than 60% of the total are classified as "rotten", while those who pass it are classified as "fresh" .1
+
+When the films reach 75% of approval, they receive the certificate of freshness, thus giving the good Universal criticism.2
+
+In April of 2015 the Latin American version was launched under the name Tomatazos (http://www.tomatazos.com/).
+This website applies this idea when collecting the opinions of the shows by means of a count of positive and negative votes. Shows that get a percentage of positive votes less than 60% of the total are classified as "rotten", while those who pass it are classified as "fresh" .1
+
+When the films reach 75% of approval, they receive the certificate of freshness, thus giving the good Universal criticism.2
+
+In April of 2015 the Latin American version was launched under the name Tomatazos (http://www.tomatazos.com/)
+
+</p>
+
+
+</div>
+
+
+
+<div class=" col-lg-3 col-md-6 col-xs-12 ">
+
+
+
+
+
+        <div class="titulo2"><b>CONTACT US</b><br></div>
+            <div class="cuerpo2"><b>Customer Support</b></p>
+              <P>Visit our FAQs or fill out our Email Form. </P>
+                  <p><b>Licensing or Partnership Inquiries</b> </p>
+                  <P>Fill out our Business Proposal Form</P>
+                  <p><b>Submit Movie Information</b> </p>
+                  <p>Tell us about missing or incorrect movie or TV information.</p>
+                  <p><b>Advertise</b></p>
+                  <p>Review Fandango Advertising Opportunities.</p>
+                  </div>
+
+
+
+
+                     <p><b>Follow Us</b></p>
+  
+                          <div class="textwidget1">
+                           <h3 div class="f"></h3>
+
+                             <a href="https://twitter.com" target="_blank">
+                                 <img src="twitter(1).png" width="34" height="34" />&nbsp;&nbsp;
+  
+                                              </i>
+                                                    </a>
+                             
+                                          <a href="https://www.facebook.com" target="_blank"><img src="face.png" width="34" height="34" />&nbsp;&nbsp;&nbsp;
+  
+                                                </i>
+                 
+                                                      </a> 
+             
+                                          <a href="https://plus.google.com" target="_blank"> <img src="google.jpg" width="34" height="34" />&nbsp;&nbsp;
+  
+
+                                                   </i>
+                                                      </a>
+
+               
+
+                                                          <a href="https://www.snapchat.com" target="_blank"><img src="sn.png" width="34" height="34" />&nbsp;&nbsp;
+  
+
+                                                             </i>
+                                                               </a>
+
+
+
+                                                            <a href="https://www.youtube.com" target="_blank"><img src="youtube-redondo.png" width=34" height="34"/>&nbsp;&nbsp;
+  
+
+                                                                               </i>
+                                                                               </a>
+                                                                               </div>
+                                                                               </div>
+                                                                               </div>
+                                                                               </div><!-- end column second -->
+
+                                                                                    </div> <!-- end row -->
+                                                                                    </div> <!-- end container-fluid -->
+
+
+
+
+<hr>
+
+<div class="container-fluid">
+
+
+              <div class="row">
+
+                   <div class=" col-lg-8 col-md-6 col-xs-12 "><div class="parraf">
+
+                 <h3> <b> WHAT IS THE TOMATOMETER®?</b> </h3>
+
+                   
+                     <p> The Tomatometer rating - based on the published opinions of hundreds of film and television critics - is a trusted measurement of movie and TV programming quality for millions of moviegoers.</p>
+
+
+
+                
+  
+                                          <p>   The Tomatometer rating represents the percentage of professional critic reviews that are positive for a given film or television show.</p>
+
+
+
+
+
+                                            <p>
+                                                    Back in the days of the open theaters, when a play was particularly atrocious, the audience expressed their dissatisfaction by not only booing and hissing at the stage, but throwing whatever was at hand -- vegetables and fruits included.
+                                                           </div><!-- end column tercer-->
+
+
+                                                  </div> <!-- end row -->
+
+                                                  </div> <!-- end container -->
+
+
+                                                    <hr>
+
+
+                                                      
+                                                    <div class="container">
+
+                                                  <div class="row">
+
+                                                   <div class=" col-lg-1 col-md-6 col-xs-12 ">
+                                                          <img src="tomato.png" width="40" height="40" />
+                                                                      </div>
+
+                                                                       <div class=" col-lg-8 col-md-6 col-xs-12 ">
+                                                                         <p>A good review is denoted by a fresh red tomato. In order for a movie or TV show to receive an overall rating of Fresh, the reading on the Tomatometer for that movie must be at least 60%.</p><br>
+                                                                         </div>
+
+
+                                                                                    </div><!-- end row -->
+
+
+                                                                                    <div class="row">
+
+                                                                                    <div class=" col-lg-1 col-md-6 col-xs-12 ">
+                                                                                              <img src="rotten.png" width="40" height="40" />
+                                                                                                     </div>
+                                                                                       <div class=" col-lg-8 col-md-6 col-xs-12 ">
+                                                                                       <p>A bad review is denoted by a rotten green tomato splat (59% or less).</p>
+                                                                                       </div><br>
+
+
+                                                                                                    </div><!-- end row -->
+
+                                                                                                     <br>
+
+
+
+
+                                                       <div class="row">
+
+
+                                                                 <div class=" col-lg-1 col-md-6 col-xs-12 ">
+                                                                 <img src="c.png" width="40" height="40" />
+                                                                   </div>
+                                                                  <div class=" col-lg-8 col-md-6 col-xs-12 ">
+                                                                   <p>To receive a Certified Fresh rating a movie must have a steady Tomatometer rating of 75% or better. Movies opening in wide release need at least 80 reviews from Tomatometer Critics (including 5 Top Critics). Movies opening in limited release need at least 40 reviews from Tomatometer Critics (including 5 Top Critics). A TV show must have a Tomatometer Score of 75% or better with 20 or more reviews from Tomatometer Critics (including 5 Top Critics). If the Tomatometer score drops below 70%, then the movie or TV show loses its Certified Fresh status. In some cases, the Certified Fresh designation may be held at the discretion of the Rotten Tomatoes editorial team.</p>
+
+                                                                         </div>
+
+                                                                       </div><!-- end row -->
+
+
+                                                                              </div> <!-- end container -->
+
+
+
+
+                                    <div class="container">
+                              
+
+                                    <div class="row">
+
+ 
+                                 <div class=" col-lg-12 col-md-6 col-xs-12 ">
+
+                                <h3><b>WHAT IS THE AUDIENCE SCORE?</b></h3>
+                              <p>The Audience rating, denoted by a popcorn bucket, is the percentage of all Flixster.com and RottenTomatoes.com users who have rated the movie or TV Show positively.</p>
+
+                                        </div>
+
+                                                </div>
+
+
+
+                                                <div class="row">
+
+                                                    <div class=" col-lg-1 col-md-6 col-xs-12 ">
+                                                    <img src="a.jpg" width="40" height="40" />
+                                                        </div>
+                                                         <div class=" col-lg-8 col-md-6 col-xs-12 ">
+                                                  <p>The full popcorn bucket means the movie received 3.5 stars or higher by Flixster and Rotten Tomatoes users.</p>
+
+                                                    </div>
+
+                                                      </div><!-- end row -->
+                                                      <br>
+
+                                                  
+                                                <div class="row">
+
+                                                    <div class=" col-lg-1 col-md-6 col-xs-12 ">
+                                                    <img src="CAI.jpg" width="40" height="40" />
+                                                        </div>
+                                                       <div class=" col-lg-8 col-md-6 col-xs-12 ">  
+                                                  <p>The tipped over popcorn bucket means the movie received less than 3.5 stars by Flixster and Rotten Tomatoes users.</p>
+
+                                                    </div>
+
+                                                      </div><!-- end row -->
+
+                                                      <br>
+
+
+
+
+                                                <div class="row">
+
+                                                    <div class=" col-lg-1 col-md-6 col-xs-12 ">
+                                                    <img src="cruz.jpg" width="40" height="40" />
+                                                        </div>
+                                                       <div class=" col-lg-8 col-md-6 col-xs-12 ">  
+                                                  <p>The plus sign will appear for movies that do not have audience ratings or reviews. The percentage you see associated with this icon is the percentage of users who added the movie to their Want-to-See list.
+                                                       </p>
+
+                                                    </div>
+
+                                                      </div><!-- end row -->
+
+
+                                                      <h3><b>EDITORIAL TEAM</b></h3>
+
+                                                      <br>
+
+
+
+                                                  <div class="row">
+
+                                                    
+                                                      
+                                                       <div class=" col-lg-4 col-md-6 col-xs-12 "> 
+
+
+                                                       <img src=https://staticv2-4.rottentomatoes.com/static/images/press/MattAbout.jpg width="80" height="80" /> <p>Matt Atchity, Editor-in-Chief
+
+
+                                                                 Matt Atchity has over fifteen years of experience managing and building websites that cover a variety of entertainment categories, such as movies, TV, music, celebrities and video games. Under Matt's leadership, Rotten Tomatoes has seen its traffic double over the past five years.
+
+                                                                  Every week, Matt's movie review roundups are broadcast on TV, web and radio around the country on outlets such as Adam Carolla's podcast, FOXnews.com and Good Day LA On KTTV. Matt also produces and hosts the popular Rotten Tomatoes podcast, a weekly deep dive into the hottest movies and TV shows - with guest appearances from A list Hollywood celebrities and filmmakers.
+                                                       </p>
+
+                                                  
+                                                    </div>
+
+
+
+
+                                                    <div class=" col-lg-4 col-md-4 col-xs-12 ">
+                                                    <img src=https://staticv2-4.rottentomatoes.com/static/images/press/GraeAbout.jpg width="80" height="80" />
+                                                  <p>Grae Drake, Senior Movie Editor
+
+
+                                                    In 6th grade, when Grae Drake was arranging movie outings for all her friends, she picked the movie. Through the years - studying film at the University of Texas at Austin, being honored by Sundance and the Director's Guild of America, and working as a filmmaker in Los Angeles - she realized how terrible she was at keeping her opinions to herself, leading to the birth of Grae's The Popcorn Mafia podcast.
+                                                       </p>
+                                                       </div>
+
+                                                    
+                                                       <div class=" col-lg-4 col-md-4 col-xs-12 "> 
+                                                     <img src=https://staticv2-4.rottentomatoes.com/static/images/press/TimAbout.jpg width="80" height="80" />
+
+                                                  <p>Timothy Ryan, Senior Editor 
+                                                         Growing up in Rhode Island, Tim Ryan spent many an afternoon pouring over the reviews in Roger Ebert's Home Movie Companion and Leonard Maltin's Movie Guide. After graduating from the University of Rhode Island with a degree in journalism, Tim worked as a beat reporter for several New England newspapers throughout New England and obsessively watched movies in his downtime. He joined the staff of Rotten Tomatoes in September of 2004, where he has overseen the aggregation of reviews, written features, compiled movie lists, interviewed celebrities, and contributed to RT's radio show and podcast.
+                                                       </p>
+
+                                                    </div>
+
+
+
+                                                      </div><!-- end row -->
+                                                      <hr>
+                                                      <hr>
+
+
+
+
+
+                          <div class="footer2">
+               
+                            <div class="text">
+                             
+                                Help</br>
+                                About Rotten Tomatoes<br/>
+                                Wat's the Tomatometer?<br/>
+                                feedback<br/>
+                                 </div> 
+
+
+                               <div class="text1">
+                             
+                          <img src="images.png" width="34" height="34" />      JOIN THE NEWSLETTER</br>
+               Get the freshest reviews, news, and more delivered  <br/><br/>
+               <input type="button" class="button" value="Join the newsletter!!"><br/>
+                            
+                                  </div> 
+
+
+                
+
+
+               <div class="textwidget">
+                <h3 div class="f">follow us</h3>
+
+                <a href="https://twitter.com" target="_blank">
+                   <img src="twitter(1).png" width="34" height="34" />
+  
+                       </i>
+                         </a>&nbsp;&nbsp;
+                             
+              <a href="https://www.facebook.com" target="_blank"><img src="face.png" width="34" height="34" />
+  
+                     </i>
+
+                         </a> &nbsp;&nbsp;
+             
+              
+            <a href="https://plus.google.com" target="_blank"> <img src="google.jpg" width="34" height="34" />
+  
+
+             </i>
+                </a>
+
+                 &nbsp;&nbsp;
+
+<a href="https://www.snapchat.com" target="_blank"><img src="sn.png" width="34" height="34" />
+  
+
+</i>
+</a>
+
+&nbsp;&nbsp;
+
+<a href="https://www.youtube.com" target="_blank"><img src="youtube-redondo.png" width=34" height="34"/>
+  
+
+</i>
+
+
+
+
+</div>
+   </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

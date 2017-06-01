@@ -1,0 +1,23 @@
+
+<!-- COMENTARIO -->
+<div class="panel panel-default">
+<!-- Default panel contents -->
+<div class="panel-heading"> <strong>Nombre:</strong>&nbsp;&nbsp;<%= comentario.name %></div>
+
+<!-- List group -->
+<ul class="list-group">
+<li class="list-group-item">
+<strong>Comentario:</strong> <br></br>
+
+
+<%= comentario.body %></p>
+<p><%= time_ago_in_words(comentario.created_at) %></p>
+
+<p> <%= link_to 'Delete',[comentario.pelicula,comentario],method: :delete, data: {confirm: 'Estas seguro de borrar el comentario?'
+
+
+},class:'btn btn-xs btn-danger', style:'margin-bottom: 5px;' %>
+</li>
+</ul>
+
+</div> <!-- end panel -->

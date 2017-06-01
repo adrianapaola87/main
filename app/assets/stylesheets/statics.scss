@@ -1,3 +1,149 @@
 // Place all the styles related to the statics controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com/   
+
+
+
+
+
+.vertical-menu {
+    width: 200px;
+
+}
+
+.vertical-menu a {
+    background-color: #blue;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.fila2{font-weight:bolder;
+	color:blue;
+
+
+}
+.titulo2{position:relative;
+	margin-left:20%;
+	top:2%;
+
+
+}
+
+.menuv{margin-left:50%;
+
+
+}
+
+
+#myCarousel{
+    width: 500px; 
+    height: 400px;
+}
+
+
+.fafa-star {
+    background-color:yellow;
+
+} 
+
+.footer{position:relative;
+    background:black;
+    padding:3%;
+    
+
+
+}
+
+.textwidget{position:relative;
+        
+        margin-left: 70%;
+        margin-top:-13%;
+
+        
+
+}
+.f{color:white;
+
+
+}
+.text{padding:3%;
+    color:white;
+    margin-top: -15;
+
+
+
+}
+
+
+.text1{position:relative;
+
+
+    padding:3%;
+    color:white;
+     margin-top:-13%;
+     margin-left:30%;
+
+
+
+
+}
+.button {
+    background-color: blue;
+    weight:5%;
+  color: white;
+    border-radius:5px;
+
+}
+
+
+.titulo2{width:90%;
+         height: 35%;
+         background:yellow;
+       margin-left:1%;
+         padding:5%;
+
+
+
+
+
+
+
+
+
+//PAGINA DE ABOUt//
+
+
+}
+
+
+.textwidget1{  margin-left:1%;
+              margin-top:-6%;
+
+
+}
+
+
+
+
+.footer2{position:relative;
+    background:black;
+    height: 80%;
+    padding:3%;
+
+    
+
+
+}
+
+

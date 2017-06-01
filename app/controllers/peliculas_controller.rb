@@ -1,7 +1,8 @@
 class PeliculasController < ApplicationController
+  
 
 def index
-	@peliculas = Pelicula.all
+	@peliculas = Pelicula.all.order("created_at DESC")
 end
 
 def show
