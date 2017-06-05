@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
  
-  resources :controllers
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  
   devise_for :users
 
 root :to => "statics#index"
@@ -11,11 +13,12 @@ root :to => "statics#index"
   get 'peliculas/index' 
   
 
-  resources :peliculas
-  resources :countries
-  resources  :peliculas do
-  resources :comentarios
-end
+   
+   resources :countries
+   resources :peliculas do
+   resources :comentarios
+   end
+   resources :settings
   
   get '/about' => 'statics#about', :as => :about
 

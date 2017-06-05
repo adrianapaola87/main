@@ -1,0 +1,46 @@
+index.html.erb
+<div class="container"> 
+ 
+
+<div class="controladorej2">
+
+ <div class="boxp">
+    <div class="alert"><i class="fa fa-home fa-1x color-teal"></i>&nbsp;Listado Comentarios</div>  
+    <table class="table table-bordered table-hover table-striped">
+      <thead class="bg-danger">
+        <tr>
+          <th>Id</th>
+          <th>Comentario</th> 
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+       <% @comentarios.each do |co| %>
+          <tr>
+            <td><%= co.id  %> </td>
+            <td>
+              <%= co.comment %>
+            </td>
+             
+            <td align="center">
+              
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'Nuevo Comentario', new_comentario_path, title:"AÃ±ade una nuevo comentario !!", class:"btn btn-sm btn-danger" %>
+    
+</div> <!-- end box -->     
+
+
+
+
+
+
+</div> <!-- end container -->
+  
+</div> <!-- end controladorej2 -->
+
+ 
+

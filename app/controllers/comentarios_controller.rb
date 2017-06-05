@@ -26,6 +26,7 @@ redirect_to comentarios_path
 else
 render :edit
 end
+end
 
 
 def create
@@ -40,11 +41,10 @@ def create
 	@comentario.destroy
 	redirect_to pelicula_path(@pelicula)
 	end
-end
 
 private
 def comentario_params
 params.require(:comentario).permit(:name, :comment)
 end
-
+end
 

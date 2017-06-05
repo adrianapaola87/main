@@ -1,0 +1,2 @@
+class TopMoviesController < ApplicationController
+end

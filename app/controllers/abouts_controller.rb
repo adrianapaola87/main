@@ -1,1 +1,2 @@
-abouts_controller.rbgfbbxjj
+class aboutsController < ApplicationController
+end
