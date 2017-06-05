@@ -1,0 +1,342 @@
+<style>
+#logo {
+  
+   background-image: url("https://staticv2-4.rottentomatoes.com/static/images/logos/tomatocorner.png");
+    background-color: green;
+    background-repeat: no-repeat;
+      width: 100%; height: 100px;
+      position: fixed;
+      
+}
+#brand-logo {
+ background-image: url("https://staticv2-4.rottentomatoes.com/static/images/logos/rtlogo.png");
+  background-repeat: no-repeat;
+      width: 400px; height: 100px;
+
+
+}
+.login { color:white !important; width:450px; float:right;}
+.nav > li > a, .navbar-text { color:white !important; font-weight: bold;  }
+.nav > li > a:visited { background-color: green !important;   
+
+</style>
+  
+
+ 
+
+  <nav id="logo" class="navbar navbar-fixed-top navbar-default" role="navigation">
+   
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsable">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- BRAND -->
+      <a href="/home" id="brand-logo" class="navbar-brand"></a>
+    </div>
+      <!-- SEARCH BOX -->
+    <div class="col-sm-5 col-md-5">
+        <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" size="50" placeholder="Search" name="q">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+
+        
+        </form>
+    </div>
+
+    <!-- NAVBAR -->
+    <div class="collapse navbar-collapse" id="navbar-collapsable">
+      <ul class="nav navbar-nav foo" id="menu">
+        
+       <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">MOVIES & DVDs<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">MOVIES & DVDs</li>
+            <b class="caret"></b>
+            <li>  <%= link_to 'Peliculas', peliculas_path %> </li>
+            <li><a href="/two">Two</a></li>
+            <li><a href="/three">Three</a></li>
+            <li class="divider"></li>
+            <li><a href="/admin">Admin Dashboard</a></li>
+            <li><a href="/admin/users">Users</a></li>
+          </ul>
+        </li> <!-- end dropdown -->
+
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">TV<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">TV</li>
+            <b class="caret"></b>
+            <li><a href="/one">One</a></li>
+            <li><a href="/two">Two</a></li>
+            <li><a href="/three">Three</a></li>
+            <li class="divider"></li>
+            <li><a href="/admin">Admin Dashboard</a></li>
+            <li><a href="/admin/users">Users</a></li>
+          </ul>
+        </li> <!-- end dropdown -->
+
+
+ <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">NEWS<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">TV</li>
+            <b class="caret"></b>
+            <li><a href="/one">One</a></li>
+            <li><a href="/two">Two</a></li>
+            <li><a href="/three">Three</a></li>
+            <li class="divider"></li>
+            <li><a href="/admin">Admin Dashboard</a></li>
+            <li><a href="/admin/users">Users</a></li>
+          </ul>
+        </li> <!-- end dropdown -->
+
+ 
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right" align="right">
+       <li><%= link_to "Nosotros", about_path, style:"float:left; color:white" %></li> 
+      <li><%=link_to "Login", new_user_session_path, style:"float:left; color:white" %> </li>
+      <li><%=link_to "Sign up", new_user_registration_path, style:"float:left; color:white" %> </li>
+
+       <% if user_signed_in? %>
+                 <li> <%= link_to '<i style="font-size:18px;color:#FFFFFF !important;" class="fa fa-sign-out fa-3"></i>Sign Out'.html_safe, destroy_user_session_path, method: :delete %></li>
+                 </br>
+                 <span style="font-weight:bold;"> <%= current_user.email %> </span>
+                 
+                 
+      <% end %>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+
+<br>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">TREDING ON RT</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Wonder Woman Rewies</a></li>
+      <li><a href="#">DC super heroes movies</a></li>
+      <li><a href="#">Cannes tomatometers</a></li>
+      <li><a href="#">Summer scorecard</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+<div class="container">
+<div class="row">
+<div class="col-lg-3">
+
+<div class="vertical-menu">
+  <a href="#" class="danger"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;&nbsp;<b>General</b></a>
+  <a href=> <i class="fa fa-shield" aria-hidden="true"></i>&nbsp;&nbsp;Seguridad e inicio de s</a>
+  <a href="#"><i class="fa fa-lock" aria-hidden="true"></i></i>&nbsp;&nbsp;Privacidad</a>
+  <a href="#"><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;&nbsp;Biografia y etiquetado</a>
+  <a href="#"><i class="fa fa-minus-circle" aria-hidden="true"></i>&nbsp;&nbsp;Bloqueos</a>
+   <a href="#"><i class="fa fa-language" aria-hidden="true"></i>&nbsp;&nbsp;Idioma</a>
+  <a href="#"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&nbsp;Notificaciones</a>
+  <a href="#"><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;&nbsp;Movil</a>
+  <a href="#"><i class="fa fa-wifi" aria-hidden="true"></i>&nbsp;&nbsp;Publicaciónes públicas</a>
+  <a href="#"><i class="fa fa-th" aria-hidden="true"></i>&nbsp;&nbsp;Aplicaciones</a>
+  <a href="#"><i class="fa fa-amazon" aria-hidden="true"></i>&nbsp;&nbsp;Anuncios publicitarios</a>
+   <a href="#"><i class="fa fa-credit-card-alt" aria-hidden="true"></i>&nbsp;&nbsp;pagos</a>
+  <a href="#"><i class="fa fa-life-ring" aria-hidden="true"></i>&nbsp;&nbsp;buzon de ayuda</a>
+  <a href="#"><i class="fa fa-film" aria-hidden="true"></i>&nbsp;&nbsp;videos</a>
+  
+</div>
+</div>
+
+
+<div class="col-lg-9">
+
+<h2>Configuración general de la cuenta</h2>
+<br>
+  <table class="table table-hover table-striped" border="0" >
+    <thead>
+      <tr>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Nombre</td>
+        <td>Adriana paola </td>
+        <td><p><a href="http://localhost:3000/about#"> Editar</a></p></td>
+      </tr>
+      <tr>
+        <td>Nombre de usuario</td>
+        <td>http:www.rottestomatoes.com/adriana</td>
+        <td><p><a href="http://localhost:3000/about#"> Editar</a></p></td>
+      </tr>
+      <tr>
+        <td>Contacto</td>
+        <td>Principal:adri_8708@hotmail.com</td>
+        <td><p><a href="http://localhost:3000/about#"> Editar</a></p></td>
+      </tr>
+
+      <tr>
+        <td>Contacto de la cuenta publicitaria</td>
+        <td>adri_8708@hotmail.com</td>
+        <td><p><a href="http://localhost:3000/about#"> Editar</a></p></td>
+      </tr>
+      <tr>
+        <td>Redes</td>
+        <td>no tiene redes</td>
+        <td><p><a href="http://localhost:3000/about#"> Editar</a></p></td>
+      </tr>
+      <tr>
+        <td>Temperatura</td>
+        <td>Centigrados/td>
+        <td><p><a href="http://localhost:3000/about#"> Editar</a></p></td>
+      </tr>
+      <tr>
+        <td>Administrar cuenta</td>
+        <td>Modifica la configuracion de tu contacto de legado o desactiva tu cuenta</td>
+        <td><p><a href="http://localhost:3000/about#"> Editar</a></p></td>
+        <tr>
+        <td><a href="http://localhost:3000/about#"> Descarga una copia de tu información</a></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
+<br>
+
+
+</div>
+</div>
+
+
+
+
+
+<br>
+<br>
+
+
+</div> <!-- end container -->
+
+
+
+ <div class="footer">
+               
+                    <div class="text">
+                             
+                                Help</br>
+                              <p><a href="http://localhost:3000/about#"> About Rotten Tomatoes</a></p>
+                                Wat's the Tomatometer?<br/>
+                                feedback<br/>
+                               </div> 
+
+
+                               <div class="text1">
+                             
+                             <img src="images.png" width="34" height="34" />      JOIN THE NEWSLETTER</br>
+                              Get the freshest reviews, news, and more delivered  <br/><br/>
+                             <input type="button" class="button" value="Join the newsletter!!"><br/>
+                                
+                                  </div> 
+                         <div class="textwidget">
+                          <h3 div class="f">follow us</h3>
+
+                         <a href="https://twitter.com" target="_blank">
+                           <img src="twitter(1).png" width="34" height="34" />
+  
+                           </i>
+                         </a>&nbsp;&nbsp;
+                             
+                         <a href="https://www.facebook.com" target="_blank"><img src="face.png" width="34" height="34" />
+  
+                           </i>
+
+                           </a> &nbsp;&nbsp;
+             
+              
+                    <a href="https://plus.google.com" target="_blank"> <img src="google.jpg" width="34" height="34" />
+  
+
+                  </i>
+                    </a>
+
+                 &nbsp;&nbsp;
+
+                <a href="https://www.snapchat.com" target="_blank"><img src="sn.png" width="34" height="34" />
+  
+
+                  </i>
+                   </a>
+
+                   &nbsp;&nbsp;
+
+                    <a href="https://www.youtube.com" target="_blank"><img src="youtube-redondo.png" width=34" height="34"/>
+  
+
+                      </i>
+
+
+
+
+                      </div>
+                        </div>
+  
+
+
+
+                
+   
