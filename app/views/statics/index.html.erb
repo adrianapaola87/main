@@ -1,160 +1,19 @@
-<style>
-#logo {
-  
-   background-image: url("https://staticv2-4.rottentomatoes.com/static/images/logos/tomatocorner.png");
-    background-color: green;
-    background-repeat: no-repeat;
-      width: 100%; height: 100px;
-      position: fixed;
-      
-}
-#brand-logo {
- background-image: url("https://staticv2-4.rottentomatoes.com/static/images/logos/rtlogo.png");
-  background-repeat: no-repeat;
-      width: 400px; height: 100px;
-
-
-}
-.login { color:white !important; width:450px; float:right;}
-.nav > li > a, .navbar-text { color:white !important; font-weight: bold;  }
-.nav > li > a:visited { background-color: green !important;   
-
-</style>
-  
 
  
-
-  <nav id="logo" class="navbar navbar-fixed-top navbar-default" role="navigation">
-   
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsable">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <!-- BRAND -->
-      <a href="/home" id="brand-logo" class="navbar-brand"></a>
-    </div>
-      <!-- SEARCH BOX -->
-    <div class="col-sm-5 col-md-5">
-        <form class="navbar-form" role="search">
-        <div class="input-group">
-            <input type="text" class="form-control" size="50" placeholder="Search" name="q">
-            <div class="input-group-btn">
-                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            </div>
-        </div>
-
-        
-        </form>
-    </div>
-
-    <!-- NAVBAR -->
-    <div class="collapse navbar-collapse" id="navbar-collapsable">
-      <ul class="nav navbar-nav foo" id="menu">
-        
-       <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">MOVIES & DVDs<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class="dropdown-header">MOVIES & DVDs</li>
-            <b class="caret"></b>
-            <li>  <%= link_to 'Peliculas', peliculas_path %> </li>
-            <li><a href="/two">Two</a></li>
-            <li><a href="/three">Three</a></li>
-            <li class="divider"></li>
-            <li><a href="/admin">Admin Dashboard</a></li>
-            <li><a href="/admin/users">Users</a></li>
-          </ul>
-        </li> <!-- end dropdown -->
-
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">TV<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class="dropdown-header">TV</li>
-            <b class="caret"></b>
-            <li><a href="/one">One</a></li>
-            <li><a href="/two">Two</a></li>
-            <li><a href="/three">Three</a></li>
-            <li class="divider"></li>
-            <li><a href="/admin">Admin Dashboard</a></li>
-            <li><a href="/admin/users">Users</a></li>
-          </ul>
-        </li> <!-- end dropdown -->
-
-
- <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">NEWS<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class="dropdown-header">TV</li>
-            <b class="caret"></b>
-            <li><a href="/one">One</a></li>
-            <li><a href="/two">Two</a></li>
-            <li><a href="/three">Three</a></li>
-            <li class="divider"></li>
-            <li><a href="/admin">Admin Dashboard</a></li>
-            <li><a href="/admin/users">Users</a></li>
-          </ul>
-        </li> <!-- end dropdown -->
-
+ <div class="estilosapp2">
  
 
-      </ul>
-      <ul class="nav navbar-nav navbar-right" align="right">
-       <li><%= link_to "Nosotros", about_path, style:"float:left; color:white" %></li> 
-      <li><%=link_to "Login", new_user_session_path, style:"float:left; color:white" %> </li>
-      <li><%=link_to "Sign up", new_user_registration_path, style:"float:left; color:white" %> </li>
-
-       <% if user_signed_in? %>
-                 <li> <%= link_to '<i style="font-size:18px;color:#FFFFFF !important;" class="fa fa-sign-out fa-3"></i>Sign Out'.html_safe, destroy_user_session_path, method: :delete %></li>
-                 </br>
-                 <span style="font-weight:bold;"> <%= current_user.email %> </span>
-                 
-                 
-      <% end %>
-
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Page 1-1</a></li>
-            <li><a href="#">Page 1-2</a></li>
-            <li><a href="#">Page 1-3</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-  
+ 
+ <!-- PARCIAL HEADER --> 
+ <%= render "shared/header" %>
 
 <br>
+<br>
+<br>
+<br>
+<br>
+
+
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -169,6 +28,8 @@
     </ul>
   </div>
 </nav>
+
+
 
 
 <div class="row">
@@ -192,58 +53,82 @@
 </div> <!-- end row -->
 
 
+<div class="container" style="margin-top:2px;">
 
+ <div class="row">
 
-<div class="container">
+<div class="col-lg-6"> 
+    <div class="card" style="width:100%;">
+      <img src="http://cdn3.computerhoy.com/sites/computerhoy.com/files/styles/fullcontent/public/novedades/capitan_america_civil_war_0.jpg?itok=V-eEAsKP" alt="Avatar" style="width: 100%; height:300px;">
+      <div class="container" style="height: 100px; overflow:hidden;">
+        <h4><b>The ligue of justice</b></h4> 
+        <p>Fans Thrilled By Trippiest Sequences</br> Yet in Episodes 3 </p> 
+      </div>
+    </div> 
+</div>  <!-- col-lg-6 -->
 
-<div class="row">
- <div class="col-lg-2 col-md-2  col-xs-3">
+ <div class="col-lg-3">
+
+<div class="card" style="width:100%;">
+      <img src="https://resizing.flixster.com/Ex9j1BNynDvLDQWwSds4ROBTvAk=/540x480/v1.czsxMDI3NzQxMDtqOzE3Mzk4OzEyMDA7Mjc0OzI0MA" alt="Avatar" style="width: 100%; height:300px;">
+      <div class="container" style="height: 100px; overflow:hidden;">
+        <h4><b>Jane Doe</b></h4> 
+        <p>Fans Thrilled By Trippiest Sequences</br> Yet in Episodes 3 </p> 
+      </div>
+    </div> 
  
- <div class="vertical-menu">
-  <a href="#" class="active">PELICULAS DE ESTRENO</a>
-  <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpJuMIOHxhz4h07XBYwsLUhUAFQFdXgTdUdTcFhjA0yrFg2YCeB7NkvxpFmk5VeR7kOCfc" style="width: 190px; height: 200px;"><br>Piratas del caribe&nbsp;55% </a>
- </div>
- </div>
+ <br>
+<br>
+<br>
 
-  &nbsp;&nbsp;<div class="col-lg-2 col-md-2 col-xs-3">
-  <div class="vertical-menu">
-  <a href="#" class="active">PELICULAS DE ESTRENO</a>
-  <a href="#"><img src="http://cs319427.vk.me/v319427654/9303/FyICJiQ7wDU.jpg" style="width: 190px; height: 200px; "/><br>Barbie y sus Amigas&nbsp;&nbsp;55%</a>
-  </div>
-</div>
-  <div class="col-lg-2 col-md-2 col-xs-3   hidden-xs hidden-md ">
- <div class="vertical-menu">
-<a href="#" class="active">PELICULAS DE ESTRENO</a>
+ </div>  <!-- col-lg-3 -->
 
-  <a href="#"><img src="https://s-media-cache-ak0.pinimg.com/736x/f0/ba/84/f0ba8451311a28cb3fa3c1c16872bf86.jpg" style="width: 190px; height: 200px; "/><br>Batmans&nbsp;&nbsp;75% </a>
-  </div>
-</div>
-  <div class="col-lg-2 col-md-2  col-xs-3">
-  <div class="vertical-menu">
-  <a href="#" class="active">PELICULAS DE ESTRENO</a>
-<a href="#"><img src="https://i.ytimg.com/vi/fk99vuX6C7w/hqdefault.jpg" style="width: 190px; height: 200px; "/><br>La zona prohibida&nbsp;&nbsp;15%</a>
- 
-  </div>
-
- </div>
-  
-
-
-  
-
- </div> <!-- end row -->
- </div>
-
-
- <div class="container">
-
-
+<br>
+<br>
+<br>
 <div class="row">
-<div class="alert bold size18"><i class="fa fa-home fa-1x color-teal" style="font-size:30px;"></i>&nbsp;<b>MOVIES OPENING THIS WEEK<b/></div>  
 
-<div class="col-md-9 col-lg-9  col-xs-12" > 
+ <div class="col-lg-6">
 
-            <table class="table table-hover table-striped" border="0" >
+         <div class="boxp">
+            <div class="alert bold size18"><i class="fa fa-home fa-1x color-teal"></i>&nbsp;MOVIES OPENING THIS WEEK</div>  
+            <table class="table" border="0">
+              
+             <tbody>
+               <% @peliculas.each do |peli| %>
+                  <tr>
+                    <td>
+                      <i class="fa fa-star" style="font-size:20px;color:green;"></i>&nbsp;</span><%= peli.stars %>
+                    </td>
+                    <td><%= peli.id  %> </td> 
+                    <td> 
+                     <%= link_to peli.name, pelicula_path(peli), :title => "Visualizar"  %> 
+                    </td>
+                    
+                     <td>
+                      <%= peli.main_actor %>
+                    </td>
+                    <td>
+                      <%= peli.year %>
+                    </td>
+                    
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+           <%= link_to 'Visualizar todas', peliculas_path, :title => "Visualizar", :class => 'btn btn-xs btn-success pull-right', style:"color: white;" %>
+
+
+        </div> <!-- end box -->     
+
+</div> <!-- end col -->
+
+
+
+  <div class="col-lg-5">
+   <div class="boxp">
+            <div class="alert bold size18"><i class="fa fa-television"></i>&nbsp;NEW TV TONIGHT</div>  
+            <table class="table">
               
               <tbody>
                <% @peliculas.each do |peli| %>
@@ -269,42 +154,54 @@
             </table>
            <%= link_to 'Visualizar todas', peliculas_path, :title => "Visualizar", :class => 'btn btn-xs btn-success pull-right', style:"color: white;" %>
 
-           </div>
-      
+        </div> <!-- end box -->    
 
-</div> <!-- row -->
-
-<div class="row">
-
- <div class="col-lg-12 col-sm-6 col-xs-6">
- <div class="alert bold size18"><i class="fa fa-home fa-1x color-teal" style="font-size:30px;"></i>&nbsp;<b>FEATURES NEWS<b/></div>  
-         </iframe> <p><a href="html_images.asp"><iframe width="860" height="390" src="https://2.bp.blogspot.com/-xJokVVozWyY/TlUZmWaZ5kI/AAAAAAAAFhQ/_rl7f0sHFyA/s1600/HP%2BSharing%2BSS%2BUpdated.png" frameborder/
-              LGq0udz4lP8?ecver=1" frameborder="0" allowfullscreen></iframe> 
-                 </div> <!-- end col -->
-
-
+  </div> <!-- end col -->
 </div>
-<br>
-<div class="row">
-    <div class="col-sm-4">
+
+</div> <!-- end row -->
 
 
-    
-      <h3><b>TOP HEADLINES</b></h3>
-      <p>.Tyler perry planing Another madoe walloween </p>
-      <p>-Variety</p>
-      <br>
-      <p>Boss baby 2l Comming in 2021</p>
-      <p>-Variety</p>
-    </div>
-    <div class="col-sm-4">
-      <h3><b>New streaming</b></h3>
-      <p>The major streaming services added bunch of great stuff this week, including this year’s Best Picture winner, an acclaimed new TV series from the CW, Quentin Tarantino’s Oscar-winning WWII thriller, and everything ranging from a fact-based psychodra.</p>
-     
-    </div>
-    <div class="col-sm-4">
-      <h3><b>20 KID TV ACTORS FROM THE EARLY 2000S WHO ARE CRUSHING IT TODAY</b></h4>        
-      <p>Time isn’t always kind to the adorable children who star in your favorite movies and TV shows, but for these kid actors who rose to fame in the early half of the 2000s, things have turned out just fine.</p>
+
+<!-- SEGUNDO ROW -->
+
+
+ <div class="row">
+
+ <div class="col-lg-7">
+
+         <div class="boxp">
+            <div class="alert bold size18"><i class="fa fa-comments"></i></i>&nbsp;TOP COMENTARIOS </div>  
+
+
+
+            <table class="table table-hover table-striped">
+              
+              <tbody>
+               <% @peliculas.each do |peli| %>
+                  <tr>
+                    <td> 
+                     <span class="fa fa-star" style="font-size:20px;color:red;">&nbsp;</span> <%= peli.stars %>
+                    </td>
+                    <td><%= peli.id  %> </td>
+                    <td>
+                      <%= peli.name %> 
+
+                    </td>
+                    
+                     <td>
+                      <%= peli.main_actor %>
+                    </td>
+                    <td>
+                      <%= peli.year %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+             <%= link_to 'Visualizar todas', peliculas_path, :title => "Visualizar", :class => 'btn btn-xs btn-success pull-right', style:"color: white;" %>
+        </div> <!-- end box -->     
+
       
     </div>
   </div>
@@ -313,75 +210,102 @@
 
 <hr>
 
-<div class="container">
- <div class="footer">
-               
-                    <div class="text">
-                             
-                                Help</br>
-                              <p><a href="http://localhost:3000/about#"> About Rotten Tomatoes</a></p>
-                                Wat's the Tomatometer?<br/>
-                                feedback<br/>
-                  </div> 
+</div> <!-- end row -->
+</body>
 
+<br>
+<br>
+<br>
+<br>
+<div class="container" style="margin-top:2px;">
+<div class="row">
 
-                <div class="text1">
-                             
-                          <img src="images.png" width="34" height="34" />      JOIN THE NEWSLETTER</br>
-               Get the freshest reviews, news, and more delivered  <br/><br/>
-                             <input type="button" class="button" value="Join the newsletter!!"><br/>
-                                
-                                  </div> 
+ <div class="col-lg-12">
 
+         <div class="boxp">
+            <div class="alert bold size18"><i class="fa fa-film"></i>&nbsp;PELICULAS  DE ESTRENO </div>  
 
-                
-
-
-               <div class="textwidget">
-                <h3 div class="f">follow us</h3>
-
-                <a href="https://twitter.com" target="_blank">
-                   <img src="twitter(1).png" width="34" height="34" />
-  
-                       </i>
-                         </a>&nbsp;&nbsp;
-                             
-              <a href="https://www.facebook.com" target="_blank"><img src="face.png" width="34" height="34" />
-  
-                     </i>
-
-                         </a> &nbsp;&nbsp;
-             
+            <table class="table table-hover table-striped">
               
-            <a href="https://plus.google.com" target="_blank"> <img src="google.jpg" width="34" height="34" />
+              <tbody>
+           <% @peliculas.each do |peli| %>
+
+<td> 
+                     <span class="fa fa-star" style="font-size:20px;color:purple;">&nbsp;</span> <%= peli.name %>
+                    </td>
+                    <td><%= peli.id  %> </td>
+                    <td>
+                      <%= link_to peli.name, pelicula_path(peli), :title => "Visualizar"  %> 
+                    </td>
+                    
+                     <td>
+                      <%= peli.director %>
+                    </td>
+                    <td>
+                      <%= peli.year %>
+                    </td>
+                    <td>
+                    <a href="#"><img src="<%=peli.url%>"></a>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+             <%= link_to 'Visualizar todas', peliculas_path, :title => "Visualizar", :class => 'btn btn-xs btn-success pull-right', style:"color: white;" %>
+        </div> <!-- end box -->     
+
+      
+    </div>
+ 
+</div>
+
+<hr>
+
+</div> <!-- end row -->
+</body>
+
+<div class="row">
+  <div class="col-sm-12" style="text-align:center;">
+    <%= form_tag(root_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+        <%= submit_tag t('general.send') %>
+    <% end %>
+  </div>
+</div>
+
+ 
+<div class="row">
+    <%@peliculas.each do |peli|%>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="latest-movie">
+            <a href="#"><img src="<%=peli.url%>"></a>
+            <p><b>Nombre:</b> <%=peli.name%></p>
+            <p><b>Director:</b> <%=peli.director%></p>
+            <p><b>Año:</b> <%=peli.year%></p>
+        </div>
+    </div>
+    <%end%>
+</div>
+<%= form_tag(root_path, :method => "get", id: "search-year-form") do %>
+      <%= text_field_tag :search_year, params[:search_year], placeholder: t('general.año')  %>
+ <%= submit_tag t('general.send') %>
+    <% end %>
+    </div>
+    
   
 
-             </i>
-                </a>
-
-                 &nbsp;&nbsp;
-
-<a href="https://www.snapchat.com" target="_blank"><img src="sn.png" width="34" height="34" />
-  
-
-</i>
-</a>
-
-&nbsp;&nbsp;
-
-<a href="https://www.youtube.com" target="_blank"><img src="youtube-redondo.png" width=34" height="34"/>
-  
-
-</i>
-
-
-
+<!-- PARCIAL FOOTER --> 
+<%= render "shared/footer" %>
 
 </div>
-   </div>
+
   
+</div>
 
-</div> <!-- end container -->
+</div>
+</div> <!-- end container -->  
 
-                
-   
+</div> <!-- end estilosapp2 
+
+
+

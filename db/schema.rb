@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170605073725) do
+ActiveRecord::Schema.define(version: 20170615212149) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -70,21 +70,44 @@ ActiveRecord::Schema.define(version: 20170605073725) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.boolean  "subscription"
+    t.string   "channel"
+    t.boolean  "active"
+    t.integer  "plan"
+    t.bigint   "amount"
+  end
+
   create_table "peliculas", force: :cascade do |t|
     t.string   "name"
     t.integer  "stars"
     t.string   "main_actor"
     t.integer  "year"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.boolean  "oscar"
+    t.string   "category"
+    t.boolean  "adward"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
+    t.text     "url"
+    t.string   "director"
   end
 
   create_table "settings", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "country"
     t.string   "language"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "nombre"
+    t.string   "nombredeusuario"
+    t.string   "contacto"
     t.index ["user_id"], name: "index_settings_on_user_id"
   end
 

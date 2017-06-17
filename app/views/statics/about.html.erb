@@ -1,161 +1,13 @@
-<style>
-#logo {
-  
-   background-image: url("https://staticv2-4.rottentomatoes.com/static/images/logos/tomatocorner.png");
-    background-color: green;
-    background-repeat: no-repeat;
-      width: 100%; height: 100px;
-      position: fixed;
-      
-}
-#brand-logo {
- background-image: url("https://staticv2-4.rottentomatoes.com/static/images/logos/rtlogo.png");
-  background-repeat: no-repeat;
-      width: 400px; height: 100px;
 
 
-}
-.login { color:white !important; width:450px; float:right;}
-.nav > li > a, .navbar-text { color:white !important; font-weight: bold;  }
-.nav > li > a:visited { background-color: green !important;   
-
-</style>
-  
-
+ <div class="estilosapp2">
  
 
-  <nav id="logo" class="navbar navbar-fixed-top navbar-default" role="navigation">
-   
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsable">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <!-- BRAND -->
-      <a href="/home" id="brand-logo" class="navbar-brand"></a>
-    </div>
-      <!-- SEARCH BOX -->
-    <div class="col-sm-5 col-md-5">
-        <form class="navbar-form" role="search">
-        <div class="input-group">
-            <input type="text" class="form-control" size="50" placeholder="Search" name="q">
-            <div class="input-group-btn">
-                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            </div>
-        </div>
-
-        
-        </form>
-    </div>
-
-    <!-- NAVBAR -->
-    <div class="collapse navbar-collapse" id="navbar-collapsable">
-      <ul class="nav navbar-nav foo" id="menu">
-        
-       <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">MOVIES & DVDs<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class="dropdown-header">MOVIES & DVDs</li>
-            <b class="caret"></b>
-            <li>  <%= link_to 'Peliculas', peliculas_path %> </li>
-            <li><a href="/two">Two</a></li>
-            <li><a href="/three">Three</a></li>
-            <li class="divider"></li>
-            <li><a href="/admin">Admin Dashboard</a></li>
-            <li><a href="/admin/users">Users</a></li>
-          </ul>
-        </li> <!-- end dropdown -->
-
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">TV<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class="dropdown-header">TV</li>
-            <b class="caret"></b>
-            <li><a href="/one">One</a></li>
-            <li><a href="/two">Two</a></li>
-            <li><a href="/three">Three</a></li>
-            <li class="divider"></li>
-            <li><a href="/admin">Admin Dashboard</a></li>
-            <li><a href="/admin/users">Users</a></li>
-          </ul>
-        </li> <!-- end dropdown -->
-
-
- <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">NEWS<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class="dropdown-header">TV</li>
-            <b class="caret"></b>
-            <li><a href="/one">One</a></li>
-            <li><a href="/two">Two</a></li>
-            <li><a href="/three">Three</a></li>
-            <li class="divider"></li>
-            <li><a href="/admin">Admin Dashboard</a></li>
-            <li><a href="/admin/users">Users</a></li>
-          </ul>
-        </li> <!-- end dropdown -->
-
  
-
-      </ul>
-      <ul class="nav navbar-nav navbar-right" align="right">
-       <li><%= link_to "Nosotros", about_path, style:"float:left; color:white" %></li> 
-      <li><%=link_to "Login", new_user_session_path, style:"float:left; color:white" %> </li>
-      <li><%=link_to "Sign up", new_user_registration_path, style:"float:left; color:white" %> </li>
-
-       <% if user_signed_in? %>
-                 <li> <%= link_to '<i style="font-size:18px;color:#FFFFFF !important;" class="fa fa-sign-out fa-3"></i>Sign Out'.html_safe, destroy_user_session_path, method: :delete %></li>
-                 </br>
-                 <span style="font-weight:bold;"> <%= current_user.email %> </span>
-                 
-                 
-      <% end %>
-
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Page 1-1</a></li>
-            <li><a href="#">Page 1-2</a></li>
-            <li><a href="#">Page 1-3</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-  
-
+ <!-- PARCIAL HEADER --> 
+ <%= render "shared/header" %>
 <br>
-
+<br>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -172,7 +24,7 @@
 
 
 
-<div class="container-fluid">
+<div class="container">
 
 <div class="row">
 
@@ -201,71 +53,7 @@ In April of 2015 the Latin American version was launched under the name Tomatazo
 
 </div>
 
-
-
-<div class=" col-lg-3 col-md-3 col-xs-12 ">
-
-
-
-
-
-        <div class="titulo2"><b>CONTACT US</b><br></div>
-            <div class="cuerpo2"><b>&nbsp;&nbsp;Customer Support</b></p>
-              <P>&nbsp;&nbsp;Visit our FAQs or fill out our Email Form. </P>
-                  <p><b>&nbsp;&nbsp;Licensing or Partnership Inquiries</b> </p>
-                  <P>&nbsp;&nbsp;Fill out our Business Proposal Form</P>
-                  <p><b>&nbsp;Submit Movie Information</b> </p>
-                  <p>&nbsp;&nbsp;Tell us about missing or incorrect movie or TV information.</p>
-                  <p><b>&nbsp;&nbsp;Advertise</b></p>
-                  <p>&nbsp;&nbsp;Review Fandango Advertising Opportunities.</p>
-                  </div>
-
-
-
-
-                     <p><b>&nbsp;&nbsp;Follow Us</b></p><div class="textwidget1">
-                           <h3 div class="f"></h3>
-
-                             <a href="https://twitter.com" target="_blank">
-                                 <img src="twitter(1).png" width="34" height="34" />&nbsp;&nbsp;
-  
-                                              </i>
-                                                    </a>
-                             
-                                          <a href="https://www.facebook.com" target="_blank"><img src="face.png" width="34" height="34" />&nbsp;&nbsp;&nbsp;
-  
-                                                </i>
-                 
-                                                      </a> 
-             
-                                          <a href="https://plus.google.com" target="_blank"> <img src="google.jpg" width="34" height="34" />&nbsp;&nbsp;
-  
-
-                                                   </i>
-                                                      </a>
-
-               
-
-                                                          <a href="https://www.snapchat.com" target="_blank"><img src="sn.png" width="34" height="34" />&nbsp;&nbsp;
-  
-
-                                                             </i>
-                                                               </a>
-
-
-
-                                                            <a href="https://www.youtube.com" target="_blank"><img src="youtube-redondo.png" width=34" height="34"/>&nbsp;&nbsp;
-  
-
-                                                                               </i>
-                                                                               </a>
-                                                                               </div>
-                                                                               </div>
-                                                                               </div>
-                                                                               </div><!-- end column second -->
-
-                                                                                    </div> <!-- end row -->
-                                                                                    </div> <!-- end container-fluid -->
+<!-- end container-fluid -->
 
 
 
@@ -308,35 +96,11 @@ In April of 2015 the Latin American version was launched under the name Tomatazo
 
 
                                                       
-                                                    <div class="container">
+                                                 
 
-                                                  <div class="row">
-
-                                                   <div class=" col-lg-1 col-md-6 col-xs-12 ">
-                                                          <img src="tomato.png" width="40" height="40" />
-                                                                      </div>
-
-                                                                       <div class=" col-lg-8 col-md-6 col-xs-12 ">
-                                                                         <p>A good review is denoted by a fresh red tomato. In order for a movie or TV show to receive an overall rating of Fresh, the reading on the Tomatometer for that movie must be at least 60%.</p><br>
-                                                                         </div>
+                                                                                    </div>
 
 
-                                                                                    </div><!-- end row -->
-
-
-                                                                                    <div class="row">
-
-                                                                                    <div class=" col-lg-1 col-md-6 col-xs-12 ">
-                                                                                              <img src="rotten.png" width="40" height="40" />
-                                                                                                     </div>
-                                                                                       <div class=" col-lg-8 col-md-6 col-xs-12 ">
-                                                                                       <p>A bad review is denoted by a rotten green tomato splat (59% or less).</p>
-                                                                                       </div><br>
-
-
-                                                                                                    </div><!-- end row -->
-
-                                                                                                     <br>
 
 
 
@@ -475,81 +239,25 @@ In April of 2015 the Latin American version was launched under the name Tomatazo
                                                       <hr>
 
 
-
-
-
-                          <div class="footer2">
-               
-                            <div class="text">
-                             
-                                Help</br>
-                                About Rotten Tomatoes<br/>
-                                Wat's the Tomatometer?<br/>
-                                feedback<br/>
-                                 </div> 
-
-
-                               <div class="text1">
-                             
-                          <img src="images.png" width="34" height="34" />      JOIN THE NEWSLETTER</br>
-               Get the freshest reviews, news, and more delivered  <br/><br/>
-               <input type="button" class="button" value="Join the newsletter!!"><br/>
-                            
-                                  </div> 
-
-
-                
-
-
-               <div class="textwidget">
-                <h3 div class="f">follow us</h3>
-
-                <a href="https://twitter.com" target="_blank">
-                   <img src="twitter(1).png" width="34" height="34" />
-  
-                       </i>
-                         </a>&nbsp;&nbsp;
-                             
-              <a href="https://www.facebook.com" target="_blank"><img src="face.png" width="34" height="34" />
-  
-                     </i>
-
-                         </a> &nbsp;&nbsp;
-             
-              
-            <a href="https://plus.google.com" target="_blank"> <img src="google.jpg" width="34" height="34" />
-  
-
-             </i>
-                </a>
-
-                 &nbsp;&nbsp;
-
-<a href="https://www.snapchat.com" target="_blank"><img src="sn.png" width="34" height="34" />
-  
-
-</i>
-</a>
-
-&nbsp;&nbsp;
-
-<a href="https://www.youtube.com" target="_blank"><img src="youtube-redondo.png" width=34" height="34"/>
-  
-
-</i>
-
-
+</div> <!-- end container -->  
 
 
 </div>
-   </div>
+
+
+
+<!-- PARCIAL FOOTER --> 
+<%= render "shared/footer" %>
+
+
+
   
 
 
 
 
 
-
+</div> <!-- end estilosapp2 
 
 
 

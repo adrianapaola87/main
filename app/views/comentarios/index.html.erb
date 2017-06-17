@@ -1,4 +1,4 @@
-index.html.erb
+
 <div class="container"> 
  
 
@@ -19,7 +19,7 @@ index.html.erb
           <tr>
             <td><%= co.id  %> </td>
             <td>
-              <%= co.comment %>
+              <%= co.body %>
             </td>
              
             <td align="center">
@@ -29,10 +29,9 @@ index.html.erb
         <% end %>
       </tbody>
     </table>
-    <%= link_to 'Nuevo Comentario', new_comentario_path, title:"AÃ±ade una nuevo comentario !!", class:"btn btn-sm btn-danger" %>
+    <%= link_to 'Nuevo Comentario', new_comentario_path, title:"Añade una nuevo comentario !!", class:"btn btn-sm btn-danger" %>
     
 </div> <!-- end box -->     
-
 
 
 
@@ -44,3 +43,6 @@ index.html.erb
 
  
 
+
+
+  

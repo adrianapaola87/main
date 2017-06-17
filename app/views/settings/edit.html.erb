@@ -1,0 +1,74 @@
+
+  <div class="estilosapp2">
+ 
+
+ 
+ <!-- PARCIAL HEADER --> 
+ <%= render "shared/header" %>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">TREDING ON RT</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Wonder Woman Rewies</a></li>
+      <li><a href="#">DC super heroes movies</a></li>
+      <li><a href="#">Cannes tomatometers</a></li>
+      <li><a href="#">Summer scorecard</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+<%if flash.present?%>
+<div class="controladorej2">
+
+<div class="box">
+    <div class="alert"><i class="fa fa-th-large fa-1x color-blue"></i>&nbsp;</div>
+  <%= form_for @setting do |f| %>
+    <div class="field">
+      <b>Pais:</b> <%= f.text_field :country %> <br>
+    </div>
+    <div class="field">
+      <b>Idioma:</b> <%= f.text_field :language %> <br>
+    </div>
+    <%= f.submit "Guardar", class:"btn btn-sm btn-danger white", style:"margin-top: 15px;" %> <br /><br />
+   <% if @setting.errors.any? %>
+  <% @setting.errors.full_messages.each do |msg| %>
+    <div class="alert alert-danger"><%= msg %></div>
+  <% end %>
+<% end %>
+
+  <%end%>
+</div>
+
+</div>
+
+
+
+<br/>
+<br/>
+
+<!-- PARCIAL FOOTER --> 
+<%= render "shared/footer" %>
+</div> <!-- end estilosapp2
+
+
+ 
+
+  
+

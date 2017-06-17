@@ -54,10 +54,11 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'font-awesome-rails'
 
 #user and admin user authentication
+ 
+gem 'stripe'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
-
-
-gem 'bcrypt','~>3.1.11' 
-
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem 'cancancan', '~> 2.0'
+gem 'active_admin_flat_skin'
+

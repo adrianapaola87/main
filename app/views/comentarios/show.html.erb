@@ -1,123 +1,60 @@
- 
- 
-<!-- MOSTRAR PELICULA -->
-<div class="alert"><i class="fa fa-th-large fa-1x color-blue"></i>&nbsp;Mostrar Pelicula</div>
-<%= form_for(@pelicula) do |f| %>
-<div class="field">
-<label class="control-label col-sm-2 col-lg-2">Id:</label>
-<div class="col-sm-10 col-lg-10">
-<input type="text" class="form-control" value="<%= @pelicula.id %>">
-</div>
-</div> <!-- end field -->
-<div class="field">
-<label class="control-label col-sm-2 col-lg-2">Nombre:</label>
-<div class="col-sm-10 col-lg-10">
-<input type="text" class="form-control" value="<%= @pelicula.name %>">
-</div>
-</div> <!-- end field -->
-<div class="field">
-<label class="control-label col-sm-2 col-lg-2">Calificación:</label>
-<div class="col-sm-10 col-lg-10">
-<input type="text" class="form-control" value="<%= @pelicula.stars %>">
-</div>
-</div> <!-- end field -->
-<div class="field">
-<label class="control-label col-sm-2 col-lg-2">Actor:</label>
-<div class="col-sm-10 col-lg-10">
-<input type="text" class="form-control" value="<%= @pelicula.main_actor %>">
-</div>
-</div> <!-- end field -->
-<div class="field">
-<label class="control-label col-sm-2 col-lg-2">Año:</label>
-<div class="col-sm-10 col-lg-10">
-<input type="text" class="form-control" value="<%= @pelicula.year %>">
-</div>
-</div> <!-- end field -->
-<% end %>
+ <div class="container"> 
 
-<!-- BOTON BACK A PELICULAS -->
+
+
+
+
+<div class="controladorej2">
+
+
+
 <div class="row">
-<div class="col-lg-12">
-<br/>
-<%= link_to 'Back', peliculas_path, class:"btn btn-sm btn-success pull-right", style:"margin-right: 15px; margin-top: 10px;" %>
-</div>
+  <div class="box">
+      <div class="alert"><i class="fa fa-th-large fa-1x color-blue"></i>&nbsp;Mostrar Comentario</div>
+       <%= form_for(@comentario) do |f| %>
+         <div class="field">
+           <label class="control-label col-sm-2 col-lg-2">Id:</label>
+              <div class="col-sm-10 col-lg-10">
+                <input type="text" class="form-control" value="<%= @comment.id %>">
+              </div>
+        </div> <!-- end field -->
+        <div class="field">
+           <label class="control-label col-sm-2 col-lg-2">Comentario:</label>
+              <div class="col-sm-10 col-lg-10">
+                <input type="text" class="form-control" value="<%= @comment.comment %>">
+              </div>
+        </div> <!-- end field -->
+         
+       <% end %>
+      <div class="row">
+        <div class="col-lg-12">
+          <br/>
+       <%= link_to 'Back', comentario_path, class:"btn btn-sm btn-success pull-right", style:"margin-right: 15px;" %>
+     </div>
+      </div> <!-- end field -->
+  </div> <!-- end box -->
+   
+  <div class="margin20">  
+    <%= @comentario.errors.full_messages.each do |message| %>
+        <div class="be-red white top-space text-center">
+          * <%= message %>
+        </div>
+    <% end %>
+  </div>
+
 </div> <!-- end row -->
-
-<br>
-
-<div style="border-top: 1px solid black; margin-top: 35px; margin: 20px;"></div>
-<h2 style="margin-top:35px; "> Comentarios </h2>
-
-<!-- VISUALIZAR LOS COMENTARIOS INTRODUCIDOS -->
-<%= render @pelicula.comentarios %>
-
-<div class="panel panel-default panelmod1" style=" box-shadow: 1px 2px 3px gray;"> 
-<span style="font-size: 2em; margin-left:-7px;margin-bottom: 10px;">Añadir comentarios</span>
-
-<!-- AÑADIR COMENTARIOS -->
-<%= render "comentarios/form" %>
-
-<%= link_to 'Editar Pelicula', edit_pelicula_path(@pelicula), class:"btn btn-sm btn-success" %>
-<%= link_to 'Back to Peliculas', peliculas_path, class:"btn btn-sm btn-info" %>
  
-<!-- MOSTRAR PELICULA -->
-<div class="alert"><i class="fa fa-th-large fa-1x color-blue"></i>&nbsp;Mostrar Pelicula</div>
-<%= form_for(@pelicula) do |f| %>
-<div class="field">
-<label class="control-label col-sm-2 col-lg-2">Id:</label>
-<div class="col-sm-10 col-lg-10">
-<input type="text" class="form-control" value="<%= @pelicula.id %>">
-</div>
-</div> <!-- end field -->
-<div class="field">
-<label class="control-label col-sm-2 col-lg-2">Nombre:</label>
-<div class="col-sm-10 col-lg-10">
-<input type="text" class="form-control" value="<%= @pelicula.name %>">
-</div>
-</div> <!-- end field -->
-<div class="field">
-<label class="control-label col-sm-2 col-lg-2">Calificación:</label>
-<div class="col-sm-10 col-lg-10">
-<input type="text" class="form-control" value="<%= @pelicula.stars %>">
-</div>
-</div> <!-- end field -->
-<div class="field">
-<label class="control-label col-sm-2 col-lg-2">Actor:</label>
-<div class="col-sm-10 col-lg-10">
-<input type="text" class="form-control" value="<%= @pelicula.main_actor %>">
-</div>
-</div> <!-- end field -->
-<div class="field">
-<label class="control-label col-sm-2 col-lg-2">Año:</label>
-<div class="col-sm-10 col-lg-10">
-<input type="text" class="form-control" value="<%= @pelicula.year %>">
-</div>
-</div> <!-- end field -->
-<% end %>
 
-<!-- BOTON BACK A PELICULAS -->
-<div class="row">
-<div class="col-lg-12">
-<br/>
-<%= link_to 'Back', peliculas_path, class:"btn btn-sm btn-success pull-right", style:"margin-right: 15px; margin-top: 10px;" %>
-</div>
-</div> <!-- end row -->
 
-<br>
 
-<div style="border-top: 1px solid black; margin-top: 35px; margin: 20px;"></div>
-<h2 style="margin-top:35px; "> Comentarios </h2>
 
-<!-- VISUALIZAR LOS COMENTARIOS INTRODUCIDOS -->
-<%= render @pelicula.comentarios %>
+  
+</div> <!-- end controladorej2 -->
 
-<div class="panel panel-default panelmod1" style=" box-shadow: 1px 2px 3px gray;"> 
-<span style="font-size: 2em; margin-left:-7px;margin-bottom: 10px;">Añadir comentarios</span>
-
-<!-- AÑADIR COMENTARIOS -->
-<%= render "comentarios/form" %>
-
-<%= link_to 'Editar Pelicula', edit_pelicula_path(@pelicula), class:"btn btn-sm btn-success" %>
-<%= link_to 'Back to Peliculas', peliculas_path, class:"btn btn-sm btn-info" %>
  
- 
+
+
+
+  
+
+	

@@ -2,8 +2,82 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/   
 
+.estilosapp2 {
 
+#logo {
+  
+   background-image: url("https://staticv2-4.rottentomatoes.com/static/images/logos/tomatocorner.png");
+    background-color: green;
+    background-repeat: no-repeat;
+      width: 100%; height: 100px;
+      
+}
+#brand-logo {
+ background-image: url("https://staticv2-4.rottentomatoes.com/static/images/logos/rtlogo.png");
+  background-repeat: no-repeat;
+      width: 400px; height: 100px;
 
+}
+.login { color:white !important; width:450px; float:right;}
+.nav > li > a, .navbar-text { color:white !important; font-weight: bold;  }
+.nav > li > a:visited { background-color: green !important;    }
+.bgreen { background-color: green; color: white; font-weight: bold;}
+.cuerpo { margin: 10px 10px; margin-top: 35px;}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s; 
+    border-radius: 5px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 5px 0 rgba(0,0,0,0.2);
+}
+
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+.container {
+    padding: 2px 18px;
+}
+table {
+  border-style: none;
+}
+table td {
+  border-style: none;
+}
+table tr:first-child td {
+  border-style: none;
+}
+table tr td:first-child {
+ border-style: none;
+}
+table tr:last-child td {
+   border-style: none;
+}
+table tr td:last-child {
+   border-style: none;
+}
+.blue { color: blue;}
+.white { color: white;}
+.fblack { background-color: black;}
+.bold { font-weight: bold; }
+.size18 { font-size: 18px; } 
+.margin10le {margin-left: 17px;}
+
+#footer { position:relative;background-color: black; padding: 1%; margin-top: 15px; border-top: 15px solid slategrey;}
+#footer a { position:relative;color:white !important; text-decoration: none;}
+#footer a:hover { color:yellow !important; }
+
+.relleno { padding: 20px;}
+ 
+}
+
+.f   {  position:relative;
+
+        margin-left:50;
+
+}
 
 
 .vertical-menu {
@@ -57,13 +131,9 @@
 
 } 
 
-.footer{position:relative;
-    background:black;
-    padding:3%;
-    
 
 
-}
+
 
 .textwidget{position:relative;
         
@@ -100,7 +170,7 @@
 }
 .button {
     background-color: blue;
-    weight:5%;
+    weight:10%;
   color: white;
     border-radius:5px;
 

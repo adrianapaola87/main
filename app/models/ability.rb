@@ -30,10 +30,11 @@ class Ability
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
     user ||= AdminUser.new # guest user (not logged in)
 
-      if user.id == 1
+      if user.id == 'adri_8708@hotmail.com'
         can :manage, :all
       else
-        can :read, Pelicula
+        can :read, :all
+        
        end
       # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
