@@ -1,7 +1,9 @@
 
+
  <div class="estilosapp2">
  
-
+<%= form_for :pelicula, url: pelicula_path(@pelicula), method: :patch, html: { multipart: true } do |f| %> 
+ 
  
  <!-- PARCIAL HEADER --> 
  <%= render "shared/header" %>
@@ -35,15 +37,32 @@
 <div class="box">
     <div class="alert"><i class="fa fa-th-large fa-1x color-blue"></i>&nbsp;Editar Pelicula</div> 
         <%= form_for(@pelicula) do |f| %>
+
         <div class="field">
             <%= f.text_field :name, placeholder: "Nombre", class:"form-control" %>
         </div> 
+           
+<div class="field">
+            <%= f.text_field :description, placeholder: "descripcion", class:"form-control" %>
+        </div> 
+
         <div class="field">
             <%= f.text_field :stars, placeholder: "Stars", class:"form-control" %>
         </div> 
         <div class="field">
             <%= f.text_field :main_actor, placeholder: "Actor", class:"form-control" %>
         </div>    
+
+         <div class="field">
+            <%= f.text_field :director, placeholder: "Director", class:"form-control" %>
+        </div>   
+         <div class="field">
+            <%= f.text_field :genre, placeholder: "
+            Genero", class:"form-control" %>
+        </div> 
+         <div class="field">
+            <%= f.text_field :url, placeholder: "Url", class:"form-control" %>
+        </div>     
         <div class="field">
             <%= f.text_field :year, placeholder: "Año", class:"form-control" %>
         </div>    
@@ -53,21 +72,19 @@
     <% end %>
     <%= link_to 'Listado de Peliculas', @pelicula, class:"btn btn-sm btn-primary", style:"margin-top: 15px;" %> 
   <br></br> 
-  <ol>
-    <li>El nombre no puede estar vacio.</li>
-    <li>No permite guardar 2 nombres en la BD con el mismo nombre.</li>
-    <li>El apellido no puede estar vacio.</li>
-    <li>El email no puede estar vacio.</li>
-    <li>El email tiene que tener el formato standard con el signo @</li>
+  
+  
   </ol>  
 </div> <!-- end box -->
 
 <div class="row">
+    <% if @pelicula.errors.any? %>
      <div class="margin20">
         <%= @pelicula.errors.full_messages.each do |message| %>
             <div class="message be-red white top-space text-center">
                 * <%= message %>
             </div>
+           <% end %> 
         <% end %>
     </div>        
 </div> <!-- end row -->
@@ -76,7 +93,7 @@
 
 
   
-
+ <% end %>
 
 
   
@@ -86,7 +103,7 @@
 
 
 
-  
+ 
 
 
 

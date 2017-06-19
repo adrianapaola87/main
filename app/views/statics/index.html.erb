@@ -61,7 +61,7 @@
     <div class="card" style="width:100%;">
       <img src="http://cdn3.computerhoy.com/sites/computerhoy.com/files/styles/fullcontent/public/novedades/capitan_america_civil_war_0.jpg?itok=V-eEAsKP" alt="Avatar" style="width: 100%; height:300px;">
       <div class="container" style="height: 100px; overflow:hidden;">
-        <h4><b>The ligue of justice</b></h4> 
+        <h4><b>The Vengadores</b></h4> 
         <p>Fans Thrilled By Trippiest Sequences</br> Yet in Episodes 3 </p> 
       </div>
     </div> 
@@ -262,37 +262,49 @@
 <hr>
 
 </div> <!-- end row -->
-</body>
-
-<div class="row">
-  <div class="col-sm-12" style="text-align:center;">
-    <%= form_tag(root_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-        <%= submit_tag t('general.send') %>
-    <% end %>
-  </div>
-</div>
-
- 
+<div class="container">
 <div class="row">
     <%@peliculas.each do |peli|%>
     <div class="col-sm-6 col-md-4 col-lg-3">
         <div class="latest-movie">
-            <a href="#"><img src="<%=peli.url%>"></a>
+         <a href="<%= pelicula_path(peli) %>"><img class="img-responsive" src="<%=peli.url%>"></a>
             <p><b>Nombre:</b> <%=peli.name%></p>
             <p><b>Director:</b> <%=peli.director%></p>
             <p><b>Año:</b> <%=peli.year%></p>
+            <p><b>Genre:</b> <%=peli.genre%></p>
         </div>
     </div>
     <%end%>
 </div>
-<%= form_tag(root_path, :method => "get", id: "search-year-form") do %>
-      <%= text_field_tag :search_year, params[:search_year], placeholder: t('general.año')  %>
- <%= submit_tag t('general.send') %>
-    <% end %>
+</div>
+ </style>
+  <div class="container text-center">
+    <div class="form-inline">
+      <%= form_tag(root_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Movies", class: ' form-control' %>
+          <%= submit_tag t('search.submit'), class: 'btn btn-default' %>
+      <% end %>
+    </div>  
+    <div class="form-inline">
+      <%= form_tag(root_path, :method => "get", id: "search-director-form") do %>
+          <%= text_field_tag :search_director, params[:search_director], placeholder: "Search Director", class: 'form-control' %>
+          <%= submit_tag t('search.submit'), class: 'btn btn-default' %>
+      <% end %>
+    </div>  
+    <div class="form-inline">   
+      <%= form_tag(root_path, :method => "get", id: "search-year-form") do %>
+        <%= text_field_tag :search_year, params[:search_year], placeholder: "Search Year", class: 'form-control' %>
+        <%= submit_tag t('search.submit'), class: 'btn btn-default'%>
+      <% end %>
     </div>
-    
-  
+    <div class="form-inline" id="genre">
+      <%= form_tag(root_path, :method => "get", id: "search-genre-form") do %>
+        <%= select_tag :search_genre, ("<option> &nbsp;Genre&nbsp;</option><br><option>ACTION</option><option>ADVENTURE</option><option>COMEDY</option><option>CRIME</option><option>DRAMA</option><option>HISTORICAL</option><option>HORROR</option><option>MUSICALS</option><option>SIENCE-FICTION</option><option>WAR</option><option>WESTERNS</option>").html_safe, class: 'btn btn-default', :onchange => "this.form.submit()"%>
+      <% end %>
+    </div>    
+  </div>
+
+
 
 <!-- PARCIAL FOOTER --> 
 <%= render "shared/footer" %>

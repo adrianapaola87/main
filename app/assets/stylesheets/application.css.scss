@@ -17,3 +17,84 @@
  */
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+$c_main_1: #DC3522;
+$c_main_2: #D9CB9E;
+$c_main_3: #374140;
+$c_main_4: #2A2C2B;
+$c_main_5: #1E1E20;
+
+body {
+	background: $c_main_2;
+}
+.navbar-right{
+  span{
+    margin-left: 5px;
+  }
+}
+  
+#nav_user {
+	margin-top: 15px;
+}
+#nav_log_out {
+	margin-top: 18px;
+	margin-left: 7px;
+}
+
+.review_title {
+	margin: 0 0 20px 0;
+}
+.reviews {
+	padding: 15px 0;
+	border-bottom: 1px solid $c_main_5;
+	.star-ratting {
+		padding-bottom: 8px;
+	}
+}
+
+
+
+/*_footer styles*/
+#footer { 
+    height: auto; 
+}
+#heart{
+  color: #E55296;
+}
+#tag-name{
+  color: #41BBBE;
+}
+.footer-social li{
+   float:left;
+}
+.social-icon {
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  background-color: blue;
+  color: #fff;
+  text-align: center;
+  margin-right: 10px;
+  padding-top: 7px;
+  border-radius: 50%;
+}
+ .linked-in{
+     background-color:#007bb6;
+ }
+ .facebook{
+     background-color:#3b5998;
+ }
+ .twitter{
+     background-color:#1da1f2;
+ }
+ .google{
+     background-color:#f63e28;
+ }
+ .img-responsive{
+  margin-top: 10px;
+ }
+ #copy{
+    margin-top: 50px;
+ }
+ #sos, #sos2{
+  margin-left: 20px;
+ }

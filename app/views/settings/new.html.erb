@@ -13,7 +13,7 @@
  
       <div class="field">
         <% f.label :country %><br>
-          <%= f.text_field :country, placeholder: "Pais"%>
+          <%= f.select :country,options_for_country, :prompt=>'select one', class: 'form-control'%>
       </div>
       <div class="field">
         <% f.label :language %> <br />

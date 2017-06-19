@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
+  get 'payment_select/select_plan'
+
+  get 'payment_select/select_monthly_subscription'
+
 devise_for :users
  
 devise_for :admin_users, ActiveAdmin::Devise.config
 ActiveAdmin.routes(self)
 resources :settings
 resources :charges
-  
+resources :payment_select
+
+
   
 
 
