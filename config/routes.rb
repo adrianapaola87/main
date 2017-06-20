@@ -21,7 +21,7 @@ resources :payment_select
   
   get 'settings/index'
  
-
+    resources :select_peliculas, only: :index
    
    resources :countries
    resources :peliculas do

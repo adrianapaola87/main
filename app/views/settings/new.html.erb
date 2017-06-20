@@ -1,29 +1,44 @@
 
 
-<div class="container">
-    <% if @setting.errors.any? %>
-    <ul>
-      <% @setting.errors.each do |atributo, mensaje| %>
-      <li> <%= mensaje %> </li>
-      <% end %>
-    </ul>
-    <% end %>
 
-  <%= form_for @setting do |f| %>
- 
-      <div class="field">
-        <% f.label :country %><br>
-          <%= f.select :country,options_for_country, :prompt=>'select one', class: 'form-control'%>
+
+<h2>New Settigns</h2>
+
+<% if @setting.errors.any? %>
+  <% @setting.errors.full_messages.each do |msg| %>
+    <!-- <div class="alert alert-danger"><%= msg %></div> -->
+    <p hidden><%= flash[:alert] = msg %></p>
+    <%if flash.present?%>
+      <div class="row">
+          <div class="col-sm-12 col-md-6 col-md-offset-3" style="padding: 0 0">
+              <%= render partial: "shared/flash_messages_fix", flash: flash %>
+          </div>
       </div>
-      <div class="field">
-        <% f.label :language %> <br />
-          <%= f.text_field :language, placeholder: "Idioma"%>
-      </div>    
-       
-      <div class="field">
-          <%= f.submit "Guardar", class:"btn btn-sm btn-danger white", style:"margin-top: 15px;" %> <br /> <br />
-      </div>
+    <%end%>       
   <% end %>
+<% end %>
+
+<!-- 
+<% if @setting.errors.any? %>
+  <% @setting.errors.full_messages.each do |msg| %>
+    <div class="alert alert-danger"><%= msg %></div>        
+  <% end %>
+<% end %>
+
+ -->
+ <div class="container">
+<%= form_for(@setting) do |f| %>
+  <%= f.label :country %> 
+  <div class="field">            
+      <%= f.select :country, options_for_country, {}, {:prompt => 'Select One Country',  autofocus: 'true', class: 'form-control'}  %>
+  </div>  
+  <div class="field">
+    <%= f.label :language %>           
+      <%= f.select :language, options_for_language, {}, {:prompt => 'Select One Country',  autofocus: 'true', class: 'form-control'}  %>
+  </div> 
+  <div class="field">
+    <%= f.submit "Guardar", class:"btn btn-sm btn-danger white pull-right", style:"margin-top: 15px;" %>
+  </div>
+<% end %>
 
 </div>
-

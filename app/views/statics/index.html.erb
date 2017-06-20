@@ -37,12 +37,12 @@
 <div class="col-md-3 col-lg-3 col-xs-12  hidden-sm"> 
 <div class="vertical-menu"><div class="menu v">
   <a href="#" class="active">PRINCIPAL</a>
-  <a href="#"> <img src="nube.jpg" width="34" height="34" />&nbsp;
+  <a href="#"> <img src="http://res.cloudinary.com/dfw9nsmab/image/upload/v1497896872/nube_tadxs0.jpg" width="34" height="34" />&nbsp;
   Nuevas pelis</a>
-   <a href="#"><img src="fuegos.jpg" width="34" height="34" />&nbsp;
+   <a href="#"><img src="http://res.cloudinary.com/dfw9nsmab/image/upload/v1497896897/fuegos_wmmfyk.jpg" width="34" height="34" />&nbsp;
   Popular</a>
-    <a href="#"><img src= "estrella.jpg" width="34" height="34" />&nbsp;Mas visto</a>
-     <a href="#"><img src="corazon.png" width="34" height="34" />&nbsp;Mas votados</a>
+    <a href="#"><img src= "http://res.cloudinary.com/dfw9nsmab/image/upload/v1497896909/estrella_ovfb4z.jpg" width="34" height="34" />&nbsp;Mas visto</a>
+     <a href="#"><img src="http://res.cloudinary.com/dfw9nsmab/image/upload/v1497896927/corazon_dnyfcf.png" width="34" height="34" />&nbsp;Mas votados</a>
   </div>
  
             
@@ -268,6 +268,7 @@
     <div class="col-sm-6 col-md-4 col-lg-3">
         <div class="latest-movie">
          <a href="<%= pelicula_path(peli) %>"><img class="img-responsive" src="<%=peli.url%>" style="width:120px;height:120px;"></a>
+            <p><b>Id:</b> <%=peli.id%></p>
             <p><b>Nombre:</b> <%=peli.name%></p>
             <p><b>Director:</b> <%=peli.director%></p>
             <p><b>Año:</b> <%=peli.year%></p>
@@ -282,24 +283,24 @@
     <div class="form-inline">
       <%= form_tag(root_path, :method => "get", id: "search-form") do %>
           <%= text_field_tag :search, params[:search], placeholder: "Search Movies", class: ' form-control' %>
-          <%= submit_tag t('search.submit'), class: 'btn btn-default' %>
+          <%= submit_tag 'search.submit', class: 'btn btn-danger' %>
       <% end %>
     </div>  
     <div class="form-inline">
       <%= form_tag(root_path, :method => "get", id: "search-director-form") do %>
           <%= text_field_tag :search_director, params[:search_director], placeholder: "Search Director", class: 'form-control' %>
-          <%= submit_tag t('search.submit'), class: 'btn btn-default' %>
+          <%= submit_tag 'search.submit', class: 'btn btn-default' %>
       <% end %>
     </div>  
     <div class="form-inline">   
       <%= form_tag(root_path, :method => "get", id: "search-year-form") do %>
         <%= text_field_tag :search_year, params[:search_year], placeholder: "Search Year", class: 'form-control' %>
-        <%= submit_tag t('search.submit'), class: 'btn btn-default'%>
+        <%= submit_tag 'search.submit', class: 'btn btn-default'%>
       <% end %>
     </div>
     <div class="form-inline" id="genre">
       <%= form_tag(root_path, :method => "get", id: "search-genre-form") do %>
-        <%= select_tag :search_genre, ("<option> &nbsp;Genre&nbsp;</option><br><option>ACTION</option><option>ADVENTURE</option><option>COMEDY</option><option>CRIME</option><option>DRAMA</option><option>HISTORICAL</option><option>HORROR</option><option>MUSICALS</option><option>SIENCE-FICTION</option><option>WAR</option><option>WESTERNS</option>").html_safe, class: 'btn btn-default', :onchange => "this.form.submit()"%>
+        <%= select_tag :search_genre, ("<option> &nbsp;Genre&nbsp;</option><br><option>ACTION</option><option>AVENTURA</option><option>COMEDY</option><option>CRIME</option><option>DRAMA</option><option>HISTORICAL</option><option>HORROR</option><option>MUSICALS</option><option>SIENCE-FICTION</option><option>WAR</option><option>WESTERNS</option>").html_safe, class: 'btn btn-default', :onchange => "this.form.submit()"%>
       <% end %>
     </div>    
   </div>
