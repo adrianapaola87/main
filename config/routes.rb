@@ -1,35 +1,46 @@
 Rails.application.routes.draw do
-  get 'payment_select/select_plan'
-
-  get 'payment_select/select_monthly_subscription'
-
-devise_for :users
+  #get 'payment_select/select_plan'
+  get '/select_plan' => 'payment_select#select_plan', as: :select_plan
+  #get 'payment_select/select_monthly_subscription'
+  get '/select_monthly_subscription' => 'payment_select#select_monthly_subscription', as: :select_monthly_subscription
+  get'select_movies/index'
+ # Order is important
+ devise_for :admin_users, ActiveAdmin::Devise.config
+ #before sidekiq
  
-devise_for :admin_users, ActiveAdmin::Devise.config
-ActiveAdmin.routes(self)
+ #devise_for :users
+  # sidekiq
+ devise_for :users, controllers: { registrations: "users/registrations"}
+  ActiveAdmin.routes(self)  
+
+   root :to => "statics#index"
+   get '/about' => 'statics#about', :as => :about
+   get 'statics/index'
+  get 'statics/about'
+  get 'peliculas/index' 
+  get 'settings/index'
+ 
+  resources :peliculas do
+   resources :comentarios
+end
+ 
+
+ 
+
+
 resources :settings
 resources :charges
 resources :payment_select
+resources :select_movies, only: :index
+resources :countries
 
-
-  
-
-
-  get 'statics/index'
-  get 'statics/about'
-  get 'peliculas/index' 
-  
-  get 'settings/index'
- 
-    resources :select_peliculas, only: :index
+root :to => "peliculas#index"
    
-   resources :countries
-   resources :peliculas do
-   resources :comentarios
    
-   get '/about' => 'statics#about', :as => :about
-   end
-    root :to => "statics#index"
+    
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+ require 'sidekiq/web'
+  authenticate :user, lambda { |u| u.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end

@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'dotenv-rails'
   gem 'byebug', platform: :mri
 end
 
@@ -54,7 +55,11 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'font-awesome-rails'
 
 #user and admin user authentication
- 
+gem 'sidekiq'
+gem 'exception_notification'
+gem 'exception_notification-rake'
+gem 'redis-namespace'
+ gem 'sendgrid-rails', '~> 2.0'
 gem 'stripe'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'

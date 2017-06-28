@@ -1,22 +1,54 @@
 
+ <div class="estilosapp2">
+ 
+
+ 
+ <!-- PARCIAL HEADER --> 
+ <%= render "shared/header" %>
+
+<br>
+<br/>
+<br/>
+<br/>
+<br/>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">TREDING ON RT</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Wonder Woman Rewies</a></li>
+      <li><a href="#">DC super heroes movies</a></li>
+      <li><a href="#">Cannes tomatometers</a></li>
+      <li><a href="#">Summer scorecard</a></li>
+    </ul>
+  </div>
+</nav>
 
 
+<br>
+ 
 
+  
+  
+    
+    
+ 
 
-
-<h2>Log in</h2>
 
 <div class="container">
+<div class="panel panel-default" style="max-height: 80%!important;width:30%;background: #999966;border-radius: 5%;position:relative; left:30%; ">
+
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-
+<h2>Log in</h2>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+  <div class="field" style="width: 150%;">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
-  <div class="field">
+  <div class="field" style="width: 150%;">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
@@ -26,9 +58,9 @@
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
-  <% end -%>
+  <% end %>
 
-  <div class="actions">
+  <div class="actions" style="width: 250%;">
     <%= f.submit "Log in" %>
   </div>
 <% end %>
@@ -37,3 +69,20 @@
 </div>
 </div>
 </div>
+</div>
+
+
+<!-- PARCIAL FOOTER --> 
+<%= render "shared/footer" %>
+
+
+
+  
+
+
+
+</div> <!-- end container -->  
+
+</div> <!-- end estilosapp2 
+
+

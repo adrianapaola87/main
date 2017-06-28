@@ -19,5 +19,30 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
+
 en:
-  hello: "Hello world"
+  mailer:
+    onboarding_mailer: "Welcome to5000Movies!"
+    onboarding_mailer_second_mailer: "Thanks for stay with us!"
+    onboarding_mailer_third_mailer: "Get some live!"
+    subject_title_hml: "5000Movies"
+  search:
+    submit: "Search"
+  payment:
+    create_success: "Thanks for your donation!"
+  setting:
+    create_success: "Succesful created!"
+    create_not_success: "Sorry, NOT Succesful created!"
+    update_success: "Succesful updated!"
+    update_not_success: "Sorry, NOT Succesful updated!"
+  activerecord:
+    errors:
+      models:
+        setting:
+          attributes:
+            country:
+              no_country: ": Must be present!"
+              short_country: ": Needs 2 or more characters!"
+            language:
+              no_language: ": Must be present!"
+              short_language: ": Needs 2 or more characters!"

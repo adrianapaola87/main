@@ -1,0 +1,81 @@
+<div class="estilosapp2">
+ 
+
+ 
+ <!-- PARCIAL HEADER --> 
+ <%= render "shared/header" %>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">TREDING ON RT</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Wonder Woman Rewies</a></li>
+      <li><a href="#">DC super heroes movies</a></li>
+      <li><a href="#">Cannes tomatometers</a></li>
+      <li><a href="#">Summer scorecard</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container">
+<div class="row">
+  <%@peliculas.each do |peli|%>
+	  <div class="col-sm-6 col-md-4 col-lg-3 ">
+	      <div class="show-movies text-justifity">
+	          <a href="<%= pelicula_path(peli) %>"><img class="img-responsive" src="<%=peli.url%>" style="width:200px; height: 280px;"></a>
+	         
+               <p><b>Nombre:</b> <%= peli.name %></p>
+               <p><b>Director:</b> <%= peli.director %></p>
+                <p><b>Año:</b> <%= peli.year %></p>
+                <p><b>Genero:</b> <%= peli.genre %></p>
+                
+
+	         
+	         <%= link_to select_plan_path(pelicula: peli.id), class: "btn btn-lg btn-default", id: "buy-pelicula" do %>
+	          	<!-- <i class="fa fa-lg fa-money" aria-hidden="true"></i> -->
+	          	<!-- <img src="http://res.cloudinary.com/lawless/image/upload/c_scale,w_40/v1497868131/tiket_ty2eow.png" alt="tiket"> -->
+	          	<% if peli.price != nil %>
+		          	<img src="http://static5.depositphotos.com/1005347/409/v/950/depositphotos_4091946-stock-illustration-movie-and-cinema-icon-set.jpg" style="width:60px; height: 40px;">
+		          	<b> <%= peli.price/100.0 %>€ </b>
+	          	<% else %>
+		          	<img src="" alt="buy-movie">
+	          	<% end %>
+	          <% end %>	
+	          </p>
+	      </div>
+	  </div>
+  <%end%>
+</div>
+
+<br>
+<!-- 
+<%= debug params %>
+ -->
+
+
+
+</div> <!-- end container --> 
+
+<!-- PARCIAL FOOTER --> 
+<%= render "shared/footer" %>
+
+</div>
+
+  
+</div>
+
+</div>
+ 
+
+</div> <!-- end estilosapp2 

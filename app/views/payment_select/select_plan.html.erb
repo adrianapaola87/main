@@ -1,2 +1,82 @@
-<h1>PaymentSelect#select_plan</h1>
-<p>Find me in app/views/payment_select/select_plan.html.erb</p>
+
+ <div class="estilosapp2">
+ 
+
+ 
+ <!-- PARCIAL HEADER --> 
+ <%= render "shared/header" %>
+
+
+
+ 
+<br>
+<br/>
+<br/>
+<br/>
+<br/>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">TREDING ON RT</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Wonder Woman Rewies</a></li>
+      <li><a href="#">DC super heroes movies</a></li>
+      <li><a href="#">Cannes tomatometers</a></li>
+      <li><a href="#">Summer scorecard</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+<div class="container">
+<h2 class="jumbotron text-center">Payment Plan Select</h2>
+
+ 
+        <div class="row" style="margin: 0px auto; border:1px solid gray;padding: 10px;">
+        <%= link_to new_charge_path(amount: @pelicula_id.price) do %>
+                <div class="col-md-6 well" style="width: 450px;height: 480px;border-radius: 10px; margin: 15px;">
+                        <div class="text-center">
+                               <img class="img-responsive" src="<%= @pelicula_id.url %>" style="width: 310px;height:                         320px;border-radius: 10px; margin: 15px;"">
+                               
+                  <h2> Buy <%= @pelicula_id.name %> for: <%= @pelicula_id.price/100.0 %>€</h2>
+                           </div>
+
+                       
+                </div>               
+        <% end %> 
+        
+
+                 <%= link_to select_monthly_subscription_path(@pelicula_id) do %>
+                <div class="col-md-6 well" style="width: 450px;height: 480px;border-radius: 10px; margin: 15px;">
+                        <div class="text-center">
+                               <img class="img-responsive" src="http://st.depositphotos.com/2274151/4233/i/950/depositphotos_42330095-stock-photo-subscribe-now-blue-grunge-round.jpg" style="width:80%;">
+                               <h2> SUBSCRIBE NOW</h2>
+                        </div>
+                </div>        
+        <% end %> 
+</div> 
+ 
+</div>
+
+
+
+
+
+
+<!-- PARCIAL FOOTER --> 
+<%= render "shared/footer" %>
+
+
+
+  
+
+
+
+</div> <!-- end container -->  
+
+</div> <!-- end estilosapp2 
+
+

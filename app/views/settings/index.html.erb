@@ -70,11 +70,11 @@ end
   <div>
     <table style="width:70%; border: 1px solid black;">
       <tr style="border: 1px solid black; align: center; background-color:  #b30047">
-        <th style="padding: 10px; border: 1px solid black; text-align: center;">ID</th>
-        <th style="padding: 10px; border: 1px solid black; text-align: center;">Email</th>
-        <th style="padding: 10px; border: 1px solid black; text-align: center;">Current sign in at</th>
-        <th style="padding: 10px; border: 1px solid black; text-align: center;">Sign in count</th> 
-        <th style="padding: 10px; border: 1px solid black; text-align: center;">Created at</th>
+        <th style="padding: 10px; border: 1px solid black; text-align: center;color:white;">ID</th>
+        <th style="padding: 10px; border: 1px solid black; text-align: center;color:white;">Email</th>
+        <th style="padding: 10px; border: 1px solid black; text-align: center;color:white;">Current sign in at</th>
+        <th style="padding: 10px; border: 1px solid black; text-align: center;color:white;">Sign in count</th> 
+        <th style="padding: 10px; border: 1px solid black; text-align: center;color:white;">Created at</th>
       </tr>
       <tr>
         <td style="padding: 10px; text-align: center;"><%= current_user.id  %> </td>
@@ -90,8 +90,8 @@ end
   <div>
     <table style="width:70%; border: 1px solid black;">
       <tr style="border: 1px solid black; background-color: #b30047; color: white">
-        <th style="padding: 10px; text-align: center; border: 1px solid black;">Pais</th>
-        <th style="padding: 10px; text-align: center; border: 1px solid black;">Idioma</th>
+         <th style="padding: 10px; text-align: center; border: 1px solid black;"><i class="fa fa-globe" style="font-size:20px;color:white;"></i>  Country</th>
+        <th style="padding: 10px; text-align: center; border: 1px solid black;"><i class="fa fa-info-circle" style="font-size:20px;color:white;"></i> Language</th>
         <th style="padding: 10px; text-align: center; border: 1px solid black;" colspan="2"><span class="glyphicon glyphicon-pencil"></span></th>
       </tr>
         <%if !@setting.nil?%>
@@ -116,11 +116,11 @@ end
 <p><%= link_to "Nuevo pago", new_charge_path, title:"Nuevo pago", class: "btn btn-primary", style:"color:white;" %></p>
     <table style="width:70%; border: 1px solid black;">
       <tr style="border: 1px solid black; align: center; background-color: #b30047">
-        <th style="padding: 10px; border: 1px solid black; text-align: center;">Subscription</th>
-        <th style="padding: 10px; border: 1px solid black; text-align: center;">Channel</th>
-        <th style="padding: 10px; border: 1px solid black; text-align: center;">Active</th>
-        <th style="padding: 10px; border: 1px solid black; text-align: center;">Plan</th> 
-        <th style="padding: 10px; border: 1px solid black; text-align: center;">Amount</th>
+        <th style="padding: 10px; border: 1px solid black; text-align: center;color:white;">Subscription</th>
+        <th style="padding: 10px; border: 1px solid black; text-align: center;color:white;">Channel</th>
+        <th style="padding: 10px; border: 1px solid black; text-align: center;color:white;">Active</th>
+        <th style="padding: 10px; border: 1px solid black; text-align: center;color:white;">Plan</th> 
+        <th style="padding: 10px; border: 1px solid black; text-align: center;color:white;">Amount</th>
       </tr>
       <%if !@payment.nil?%>
         <%@payment.each do |payment|%>

@@ -6,7 +6,7 @@ class SettingsController < ApplicationController
   def index
     def index
         @setting = current_user.setting
-        
+        flash[:success] = t('flash.acabas de iniciar sesion')
         @payment = current_user.payments
     end
   end
@@ -23,6 +23,8 @@ class SettingsController < ApplicationController
   def create
     @setting = current_user.build_setting(setting_params)
     if @setting.save
+      flash[:success] = t('flash.se acaba de actualizar tu base da datos')
+
       redirect_to settings_path :notice => "Se han guardado el pais e idioma"
     else
       render :new
